@@ -46,12 +46,9 @@ architecture Behavioral of Cursor is
 
 begin
 
-    process 
+    process (Ubtn, Dbtn, Lbtn, Rbtn)
     begin
-    
-    --cursor
-        
-        case (CursorCol) is        
+        case (CursorCol) is
             when "000" =>
                 case (CursorRow) is
                     when "000" =>
