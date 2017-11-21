@@ -43,5 +43,39 @@ architecture Behavioral of Cursor is
 
 begin
 
+    process 
+    begin
+    
+    cursor
+        
+        case (GameState) is
+            when "000" =>
+                
+                case "000" then
+                
+                    HM_P1_A[0] <= '1';
+                    
+                    if rising_edge(Ubtn) then
+                        NS1 <= "111";
+                        HM_P1_A[0] <= '0';
+    
+                    if rising_edge(Dbtn) then
+                        NS1 <= "001";
+                        HM_P1_A[0] <= '0';
+    
+                case "001" then
+                    HM_P1_A[1] <= '1';
+                    if rising_edge(Ubtn) then
+                        NS1 <= "000";
+    
+                    if rising_edge(Dbtn) then
+                        NS1 <= "010";
+    
+                    if rising_edge(Lbtn) then
+                        NS <= "100";
+                    
+                    if rising_edge(Rbtn) then
+                        NS <= "001";
+
 
 end Behavioral;
