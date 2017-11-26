@@ -12,10 +12,9 @@ entity gamestate is
            Mbtn : in STD_LOGIC);
 end gamestate;
 
-architecture Behavioral of newcursor is
+architecture Behavioral of gamestate is
 
 signal GameState, OCursorCol, NCursorCol : std_logic_vector(2 downto 0) := "000";
-signal sw1, sw2, sw3 : std_logic;
 signal OCursorRow : integer := 0;
 
 signal R_SMP1_A, R_SMP1_B, R_SMP1_C, R_SMP1_D, R_SMP1_E, R_SMP2_A, R_SMP2_B, R_SMP2_C, R_SMP2_D, R_SMP2_E, R_HMP1_A, R_HMP1_B, R_HMP1_C, R_HMP1_D, R_HMP1_E, R_HMP2_A, R_HMP2_B, R_HMP2_C, R_HMP2_D, R_HMP2_E,
