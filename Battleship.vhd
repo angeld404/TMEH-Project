@@ -1,4 +1,4 @@
-ibrary IEEE;
+library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 entity Battleship is
@@ -655,7 +655,7 @@ CLKDivider : process (CLK)
 end process;
 
 displayRow : process (RowCLK)
-    variable RowCountA, RowCountB, RowCountC, RowCountD, RowCountE : integer range 0 to 8  := 0;
+    variable RowCountA, RowCountB, RowCountC, RowCountD, RowCountE, RowCount : integer range 0 to 8  := 0;
     variable OScreen  : unsigned (2 downto 0) := "000";
     variable NScreen  : unsigned (2 downto 0) := "000";
 
@@ -683,23 +683,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= R_SMP1_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= R_SMP1_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= R_SMP1_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= R_SMP1_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= R_SMP1_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------RED   - HIT MAP  - PLAYER 1
@@ -723,23 +723,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= R_HMP1_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= R_HMP1_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= R_HMP1_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= R_HMP1_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= R_HMP1_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------RED   - SHIP MAP - PLAYER 2
@@ -763,23 +763,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= R_SMP2_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= R_SMP2_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= R_SMP2_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= R_SMP2_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= R_SMP2_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------RED   - HIT MAP  - PLAYER 2
@@ -803,23 +803,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= R_HMP2_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= R_HMP2_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= R_HMP2_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= R_HMP2_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= R_HMP2_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------GREEN - SHIP MAP - PLAYER 1
@@ -843,23 +843,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= G_SMP1_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= G_SMP1_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= G_SMP1_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= G_SMP1_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= G_SMP1_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------GREEN - HIT MAP  - PLAYER 1
@@ -883,23 +883,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= G_HMP1_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= G_HMP1_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= G_HMP1_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= G_HMP1_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= G_HMP1_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------GREEN - SHIP MAP - PLAYER 2
@@ -923,23 +923,23 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= G_SMP2_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= G_SMP2_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= G_SMP2_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= G_SMP2_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= G_SMP2_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
     -----------GREEN - HIT MAP  - PLAYER 2
@@ -963,42 +963,42 @@ displayRow : process (RowCLK)
                                         RowCountE := 0;
                                     else
                                         DataOutRow <= G_HMP2_E(RowCountE);
-                                        RowCountE := RowCountE + RowCountE + 1;
+                                        RowCountE := RowCountE + 1;
                                     end if;
                                 else
                                     DataOutRow <= G_HMP2_D(RowCountD);
-                                    RowCountD := RowCountD + RowCountD + 1;
+                                    RowCountD := RowCountD + 1;
                                 end if;
                             else
                                 DataOutRow <= G_HMP2_C(RowCountC);
-                                RowCountC := RowCountC + RowCountC + 1;
+                                RowCountC := RowCountC + 1;
                             end if;
                         else
                             DataOutRow <= G_HMP2_B(RowCountB);
-                            RowCountB := RowCountB + RowCountB + 1;
+                            RowCountB := RowCountB + 1;
                         end if;
                     else
                         DataOutRow <= G_HMP2_A(RowCountA);
-                        RowCountA := RowCountA + RowCountA;
+                        RowCountA := RowCountA + 1;
                     end if;
                     OScreen := NScreen;
                 end case;
     -----------Latch Out Code -- Triggers every 8 counts [0,7]
-                if (RowCount1 = 7) then
+                if (RowCount = 7) then
                     LatchOutRow <= 1;
-                    RowCount1 := 0;
+                    RowCount := 0;
                 else
                     LatchOutRow <= 0;
-                    RowCount1 := RowCount1 + 1;
+                    RowCount := RowCount + 1;
                 end if;
         end if;
 end process;
 
 displayCol : process (RowCLK)
-    variable ColCount : integer range 0 to 8  := 0;
-    variable RowCount : integer range 0 to 8  := 0;
+    variable ColCount : integer range 0 to 40  := 0;
+    variable LatchCount : integer range 0 to 8  := 0;
     begin
-        if ((RowCLK)) then
+        if (rising_edge(RowCLK)) then
             if (RowCount2 = 7) then
                 ColCLK <= '1';
                     if (ColCount = 40) then
@@ -1009,11 +1009,11 @@ displayCol : process (RowCLK)
                         ColCount := ColCount + 1;
                     end if;
                 LatchOutCol <= 1;
-                RowCount2 := 0;
+                LatchCount := 0;
             else
                 LatchOutCol <= 0;
                 ColCLK <= '0';
-                RowCount2 := RowCount + 1;
+                LatchCount := LatchCount + 1;
             end if;
         end if;
 end process;
