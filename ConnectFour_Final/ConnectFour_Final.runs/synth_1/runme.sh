@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/connectfour_pnptransistors/connectfour_pnptransistors.runs/synth_1'
+HD_PWD='E:/ConnectFour_Final/ConnectFour_Final.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

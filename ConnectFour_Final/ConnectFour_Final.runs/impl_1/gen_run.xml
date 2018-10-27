@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512103437">
-  <File Type="PWROPT-DRC" Name="connectfour_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="connectfour_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="connectfour_timing_summary_init.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512270663">
   <File Type="ROUTE-PWR-RPX" Name="connectfour_power_routed.rpx"/>
   <File Type="PA-TCL" Name="connectfour.tcl"/>
-  <File Type="OPT-HWDEF" Name="connectfour.hwdef"/>
+  <File Type="INIT-TIMING" Name="connectfour_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="connectfour_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="connectfour_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="connectfour.vdi"/>
   <File Type="OPT-DCP" Name="connectfour_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="connectfour.hwdef"/>
   <File Type="OPT-DRC" Name="connectfour_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="connectfour_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="connectfour_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="connectfour_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="connectfour_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="connectfour_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="connectfour.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="connectfour_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="connectfour.drc"/>
+  <File Type="BG-BIN" Name="connectfour.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="connectfour_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="connectfour.msk"/>
+  <File Type="BG-DRC" Name="connectfour.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="connectfour_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="connectfour.bgn"/>
+  <File Type="BITSTR-MSK" Name="connectfour.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="connectfour_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="connectfour.bgn"/>
   <File Type="ROUTE-PWR" Name="connectfour_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="connectfour_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="connectfour_route_status.rpt"/>

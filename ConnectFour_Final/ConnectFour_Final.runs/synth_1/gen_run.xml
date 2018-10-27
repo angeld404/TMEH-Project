@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512103437">
-  <File Type="RDS-PROPCONSTRS" Name="connectfour_drc_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512270544">
   <File Type="PA-TCL" Name="connectfour.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="connectfour_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="connectfour.vds"/>
   <File Type="RDS-UTIL" Name="connectfour_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="connectfour_utilization_synth.pb"/>

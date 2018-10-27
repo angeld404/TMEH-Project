@@ -2,49 +2,44 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 entity connectfour is
-    Port ( Lbtn : in STD_LOGIC;
-           Rbtn : in STD_LOGIC;
-           Cbtn : in STD_LOGIC;
-           CLK  : in STD_LOGIC;
+    Port ( Lbtn : in STD_LOGIC; -- LEFT BUTTON
+           Rbtn : in STD_LOGIC; -- RIGHT BUTTON
+           Cbtn : in STD_LOGIC; -- CENTER BUTTON
+           CLK  : in STD_LOGIC; -- CLOCK
+           RST  : in STD_LOGIC; -- UP BUTTON/RESET
 
 
- 
+           -- Row Data out through PMOD connection 
            DORow : out STD_LOGIC_VECTOR(7 downto 0) := "00000000";
            
-
+           -- Column Data out through PMOD connection
            DOCol : out STD_LOGIC_VECTOR(0 to 15) := "0000000000000000"
            );
 end connectfour;
 
 architecture Behavioral of connectfour is
 
-    signal TurnState, BtnCLK : std_logic := '1';
-    signal RedA, RedB, RedC, RedD, RedE, RedF, RedG, RedH : std_logic_vector (7 downto 0) := "00000000";
-    signal GreenA, GreenB, GreenC, GreenD, GreenE, GreenF, GreenG, GreenH : std_logic_vector  (7 downto 0) := "00000000";
-    signal RowCLK, ColCLK : std_logic := '0';
-    signal LORowSig : std_logic := '0';
-    signal NTurnState : std_logic := '1';
+    signal TurnState, NTurnState : std_logic := '1';
+    signal RedA, RedB, RedC, RedD, RedE, RedF, RedG, RedH : std_logic_vector (7 downto 0) := "00000000"; -- Row data depending on column: RED
+    signal GreenA, GreenB, GreenC, GreenD, GreenE, GreenF, GreenG, GreenH : std_logic_vector  (7 downto 0) := "00000000"; -- Row Data depending on column: GREEN
+    signal ColCLK, BtnCLK : std_logic := '0'; -- Clocks
 
 begin
 
+-- Clock process opperating at 960Hz
 CLKDivider : process (CLK)
-    variable clkcount2 : integer range 0 to 52083 := 0;
-    variable clkcount : integer range 0 to 6510 := 0;
+    variable clkcount : integer range 0 to 52083 := 0;
     begin
         if (rising_edge(CLK)) then
             clkcount := clkcount + 1;
-            clkcount2 := clkcount2 + 1;
-            if (clkcount = 6510) then
-                RowCLK <= not(RowCLK);
-                clkcount := 0;
-            end if;
-            if (clkcount2 = 52083) then
+            if (clkcount = 52083) then
                 ColCLK <= not(ColCLK);
-                clkcount2 := 0;
+                clkcount := 0;
             end if;
         end if;
 end process;
 
+-- Clock process opperating at 5 Hz.
 ButtonCLK : process (CLK)
     variable btnclkcount : integer range 0 to 10000001 := 0;
     begin
@@ -58,23 +53,52 @@ ButtonCLK : process (CLK)
     end if;
 end process;
 
-
+-- Cursor Process.
+    -- Allows for movement of cursor on top row of display. Color depends on player's turn Red/Green : P1/P2.
+    -- Also allows for column selection using middle button: When a column is selected, lowest possible LED on same column is lit up corresponding to the player's color.
 cursor : process (BtnCLK)
-    variable OCursorCol : STD_LOGIC_VECTOR (2 downto 0) := "000";
-    variable NCursorCol : STD_LOGIC_VECTOR (2 downto 0) := "000";
     
+    variable OCursorCol : STD_LOGIC_VECTOR (2 downto 0) := "000";
+        -- OCursorCol keeps track of previous column
+    variable NCursorCol : STD_LOGIC_VECTOR (2 downto 0) := "000";
+        -- NCursorCol sets new cursor column
     begin
+    
+    --RESET condition (UP Button)
+        --Board is cleared for game to restart
     if (rising_edge(BtnCLK)) then
+        if (RST = '1') then
+            RedA <= "00000000";
+            RedB <= "00000000";
+            RedC <= "00000000";
+            RedD <= "00000000";
+            RedE <= "00000000";
+            RedF <= "00000000";
+            RedG <= "00000000";
+            RedH <= "00000000";
+            GreenA <= "00000000";
+            GreenB <= "00000000";
+            GreenC <= "00000000";
+            GreenD <= "00000000";
+            GreenE <= "00000000";
+            GreenF <= "00000000";
+            GreenG <= "00000000";
+            GreenH <= "00000000";
+        end if;
+        
+        --  Case statements depending on Current column of RED or GREEN cursor
         case (OCursorCol) is
+            -- When Column A
             when "000" =>
                 if (Lbtn = '1') then
-                    NCursorCol := "111";
+                    NCursorCol := "111"; -- Column H
                 elsif (Rbtn = '1') then
-                    NCursorCol := "001";
+                    NCursorCol := "001"; -- Column B
                 elsif (Cbtn = '1') then
-                    NCursorCol := OCursorCol;
-                    NTurnState <= not(TurnState);
-
+                    NCursorCol := OCursorCol; -- Column stays the same
+                    NTurnState <= not(TurnState); -- Triggers next player's turn
+                    
+                    -- Checks current coumn from botton to top and turns on first LED that is not on. Color depeds on current player's cursor color.
                     for ck in 7 downto 1 loop
                         if (RedA(0) = '1') and (RedA(ck) = '0') and (GreenA(ck) = '0') then
                             RedA(Ck) <= '1';
@@ -90,22 +114,24 @@ cursor : process (BtnCLK)
                         
                         
                     end loop;
-                        
-                        
                 end if;
+                
+                -- Case that turns on LEDs on cursor row/column.
+                    -- Color depeds on current Player's turn.
+                    -- Location depends on Button presses/ Old location
                 case (TurnState) is
-                    when '0' =>
+                    when '0' => -- Red Player
                         GreenA(0) <= '0';
-                        if (NCursorCol = OCursorCol) then
+                        if (NCursorCol = OCursorCol) then -- If nothing was pressed
                             RedA(0) <= '1';
-                        elsif (NCursorCol = "111") then
+                        elsif (NCursorCol = "111") then --  If Lbtn was pressed
                             RedH(0) <= '1';
                             RedA(0) <= '0';
-                        elsif (NCursorCol = "001") then
+                        elsif (NCursorCol = "001") then -- Iff Rbtn was pressed
                             RedB(0) <= '1';
                             RedA(0) <= '0';
                         end if;
-                    when '1' =>
+                    when '1' => -- Green Player
                         RedA(0) <= '0';
                         if (NCursorCol = OCursorCol) then
                             GreenA(0) <= '1';
@@ -117,7 +143,7 @@ cursor : process (BtnCLK)
                             GreenA(0) <= '0';
                         end if;
                  end case;
-              when "001" =>
+              when "001" => -- column B
                   if (Lbtn = '1') then
                       NCursorCol := "000";
                   elsif (Rbtn = '1') then
@@ -138,12 +164,9 @@ cursor : process (BtnCLK)
                             GreenB(0) <= '0';
                         EXIT;
                         end if;
-                        
-                        
                     end loop;
-                      
-                      
                   end if;
+                  
                   case (TurnState) is
                       when '0' =>
                           GreenB(0) <= '0';
@@ -168,7 +191,7 @@ cursor : process (BtnCLK)
                               GreenB(0) <= '0';
                           end if;
                     end case;
-              when "010" =>
+              when "010" => --Column C
 
                   if (Lbtn = '1') then
                       NCursorCol := "001";
@@ -190,7 +213,6 @@ cursor : process (BtnCLK)
                             GreenC(0) <= '0';
                         EXIT;
                         end if;
-                        
                         
                     end loop;
                   end if;
@@ -219,7 +241,7 @@ cursor : process (BtnCLK)
                           end if;
                     end case;
 
-              when "011" =>
+              when "011" => -- Column D
 
                   if (Lbtn = '1') then
                       NCursorCol := "010";
@@ -270,7 +292,7 @@ cursor : process (BtnCLK)
                           end if;
                     end case;
 
-              when "100" =>
+              when "100" => -- Column E
 
                   if (Lbtn = '1') then
                       NCursorCol := "011";
@@ -321,7 +343,7 @@ cursor : process (BtnCLK)
                           end if;
                     end case;
 
-              when "101" =>
+              when "101" => -- Column F
 
                   if (Lbtn = '1') then
                       NCursorCol := "100";
@@ -372,7 +394,7 @@ cursor : process (BtnCLK)
                           end if;
                     end case;
 
-              when "110" =>
+              when "110" => -- Column G
 
                   if (Lbtn = '1') then
                       NCursorCol := "101";
@@ -423,7 +445,7 @@ cursor : process (BtnCLK)
                           end if;
                     end case;
 
-              when "111" =>
+              when "111" => -- Column H
                   if (Lbtn = '1') then
                       NCursorCol := "110";
                   elsif (Rbtn = '1') then
@@ -480,13 +502,15 @@ cursor : process (BtnCLK)
       end if;
 end process;
 
+-- Process that Controls LED display matrix
 displayRow : process (ColCLK)
+    -- 0 - 16 to refesh both the 8X8 RED and 8x8 GREEn matrix
 variable RowCount : integer range 0 to 16 := 0;
 begin
     if (rising_edge(ColCLK)) then
-        if (RowCount = 0) then
-            DORow <= RedA;
-            DOCol <= "1000000000000000";
+            if (RowCount = 0) then
+            DORow <= RedA; -- Row Data for corresponding Column
+            DOCol <= "1000000000000000"; -- Column Trigger
         elsif (RowCount = 1) then
             DORow <= RedB;
             DOCol <= "0100000000000000";
@@ -533,16 +557,11 @@ begin
             DORow <= GreenH;
             DOCol <= "0000000000000001";
         end if;
-        if (RowCount = 15) then
+        if (RowCount = 15) then -- Restart refresh from column A
             RowCount := 0;
         else
-            RowCount := RowCount + 1;
+            RowCount := RowCount + 1; -- Shift through columns
         end if;
     end if;
 end process;
-
-
-
-
-
 end Behavioral;

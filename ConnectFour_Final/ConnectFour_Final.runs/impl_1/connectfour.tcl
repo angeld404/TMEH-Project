@@ -47,16 +47,15 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir E:/connectfour_pnptransistors/connectfour_pnptransistors.cache/wt [current_project]
-  set_property parent.project_path E:/connectfour_pnptransistors/connectfour_pnptransistors.xpr [current_project]
-  set_property ip_output_repo E:/connectfour_pnptransistors/connectfour_pnptransistors.cache/ip [current_project]
+  set_property webtalk.parent_dir E:/ConnectFour_Final/ConnectFour_Final.cache/wt [current_project]
+  set_property parent.project_path E:/ConnectFour_Final/ConnectFour_Final.xpr [current_project]
+  set_property ip_output_repo E:/ConnectFour_Final/ConnectFour_Final.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet E:/connectfour_pnptransistors/connectfour_pnptransistors.runs/synth_1/connectfour.dcp
-  read_xdc E:/connectfour_pnptransistors/connectfour_pnptransistors.srcs/constrs_1/new/game_const.xdc
+  add_files -quiet E:/ConnectFour_Final/ConnectFour_Final.runs/synth_1/connectfour.dcp
+  read_xdc E:/ConnectFour_Final/ConnectFour_Final.srcs/constrs_1/new/game_const.xdc
   link_design -top connectfour -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -125,24 +124,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  catch { write_mem_info -force connectfour.mmi }
-  write_bitstream -force connectfour.bit 
-  catch {write_debug_probes -no_partial_ltxfile -quiet -force debug_nets}
-  catch {file copy -force debug_nets.ltx connectfour.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

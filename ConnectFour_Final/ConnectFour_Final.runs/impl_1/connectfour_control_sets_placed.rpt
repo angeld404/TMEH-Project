@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Thu Nov 30 20:45:41 2017
+| Date         : Sat Dec  2 19:11:52 2017
 | Host         : LAPTOP-LKVCOI5C running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file connectfour_control_sets_placed.rpt
 | Design       : connectfour
@@ -33,9 +33,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             160 |           85 |
+| No           | No                    | No                     |             160 |           96 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              43 |           12 |
+| No           | Yes                   | No                     |              43 |           11 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
@@ -49,11 +49,11 @@ Table of Contents
 |     Clock Signal     | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------------+---------------+------------------+------------------+----------------+
 |  CLK_IBUF_BUFG       |               |                  |                2 |              3 |
-|  ColCLK              |               | DOCol[4]_i_1_n_0 |                2 |              4 |
+|  ColCLK              |               | DOCol[4]_i_1_n_0 |                1 |              4 |
 |  CLK_IBUF_BUFG       |               | clear            |                4 |             16 |
 |  CLK_IBUF_BUFG       |               | BtnCLK           |                6 |             23 |
-|  ColCLK              |               |                  |               10 |             24 |
-|  BtnCLK_reg_n_0_BUFG |               |                  |               73 |            133 |
+|  ColCLK              |               |                  |               11 |             24 |
+|  BtnCLK_reg_n_0_BUFG |               |                  |               83 |            133 |
 +----------------------+---------------+------------------+------------------+----------------+
 
 
