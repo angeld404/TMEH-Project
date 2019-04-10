@@ -1,0 +1,57 @@
+#include "msp.h"
+
+#define Freq_1_5_MHz BIT0
+#define Freq_3_MHz BIT1
+#define Freq_6_MHz BIT2
+#define Freq_12_MHz BIT3
+#define Freq_24_MHz BIT4
+#define Freq_48_MHz BIT5
+
+
+/**
+ * main.c
+ */
+void set_DCO(int Freq);
+
+void main(void)
+{
+    P1 ->DIR |= (BIT0);
+    P1 ->OUT |= (BIT1);
+    set_DCO(Freq_3_MHz);
+
+ }
+
+void set_DCO(int Freq)
+{
+    CS->KEY &= CS_KEY_VAL;
+    CS->CTL1 |= (BIT1 | BIT0);
+    if (Freq == Freq_1_5_MHz){
+        CS->CTL0 = CS_CTL0_DCORSEL_0;
+    }
+    else if(Freq == Freq_3_MHz)
+        {
+            CS->CTL0 = CS_CTL0_DCORSEL_1;
+        }
+    else if(Freq == Freq_6_MHz)
+        {
+            CS->CTL0 = CS_CTL0_DCORSEL_2;
+        }
+    else if(Freq == Freq_12_MHz)
+        {
+            CS->CTL0 = CS_CTL0_DCORSEL_3;
+        }
+    else if (Freq == Freq_24_MHz)
+        {
+            CS->CTL0 = CS_CTL0_DCORSEL_4;
+        }
+    else if(Freq == Freq_48_MHz)
+        {
+            CS->CTL0 = CS_CTL0_DCORSEL_5;
+        }
+    else
+        {}
+
+
+    CS->KEY &= 0x00;
+
+}
