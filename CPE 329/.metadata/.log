@@ -449,3 +449,49 @@ java.lang.ClassNotFoundException: org.eclipse.jgit.lfs.BuiltinLFS cannot be foun
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:656)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:592)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1498)
+
+!ENTRY org.eclipse.ui 2 2 2019-04-09 19:55:12.760
+!MESSAGE com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.core.jobs 4 2 2019-04-09 20:52:19.127
+!MESSAGE An internal error occurred during: "Computing hover expression".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.debug.ui.editors.AbstractDebugTextHover$1.runOnAST(AbstractDebugTextHover.java:252)
+	at org.eclipse.cdt.ui.text.SharedASTJob$1.runOnAST(SharedASTJob.java:74)
+	at org.eclipse.cdt.internal.core.model.ASTCache.runOnAST(ASTCache.java:221)
+	at org.eclipse.cdt.internal.ui.editor.ASTProvider.runOnAST(ASTProvider.java:336)
+	at org.eclipse.cdt.ui.text.SharedASTJob.run(SharedASTJob.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 20:53:29.715
+!MESSAGE DS_ERROR: CORTEX_M4_0: Flash Programmer: Reading device TLV failed.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 20:53:29.799
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error initializing flash programming: Your XMS432P401R material is no longer supported. We recommend you moving to production-quality MSP432P401R/M silicon by ordering samples at www.ti.com/product/MSP432P401R.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 20:55:10.310
+!MESSAGE DS_ERROR: CORTEX_M4_0: Flash Programmer: Reading device TLV failed.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 20:55:10.317
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error initializing flash programming: Your XMS432P401R material is no longer supported. We recommend you moving to production-quality MSP432P401R/M silicon by ordering samples at www.ti.com/product/MSP432P401R.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 20:59:32.744
+!MESSAGE DS_ERROR: CORTEX_M4_0: Flash Programmer: Reading device TLV failed.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 20:59:32.754
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error initializing flash programming: Your XMS432P401R material is no longer supported. We recommend you moving to production-quality MSP432P401R/M silicon by ordering samples at www.ti.com/product/MSP432P401R.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 21:03:17.438
+!MESSAGE DS_ERROR: CORTEX_M4_0: Flash Programmer: Reading device TLV failed.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2019-04-09 21:03:17.447
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error initializing flash programming: Your XMS432P401R material is no longer supported. We recommend you moving to production-quality MSP432P401R/M silicon by ordering samples at www.ti.com/product/MSP432P401R.
+

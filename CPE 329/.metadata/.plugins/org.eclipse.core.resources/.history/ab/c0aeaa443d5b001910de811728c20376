@@ -1,0 +1,24 @@
+#include "msp.h"
+#include "set_dco.h"
+
+/**
+ * main.c
+ */
+
+void main(void) {
+    WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
+
+    while(1){
+    P1 ->DIR |= (BIT0);
+    P1 ->OUT |= (BIT1);
+    set_DCO(FREQ_12_MHZ);
+
+    //set P4.3 to MCLCK
+    //P4 ->SEL0 &= ~(BIT3);
+    //P4 ->SEL1 |= (BIT3);
+    }
+
+
+ }
+
+
