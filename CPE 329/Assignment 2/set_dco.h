@@ -54,12 +54,45 @@ void set_DCO(int Freq)
 }   //end set_DCO()
 
 void delay_us(int time_us) {
-    int clk_freq, i, n;     //i, n counter variables
-    clk_freq = (CS->CTL0) & (CS_CTL0_DCORSEL_MASK); //Read MCLK frequency
+    int i, n;     //i, n counter variables
 
+    switch((CS->CTL0) & (CS_CTL0_DCORSEL_MASK)) {
+        case CS_CTL0_DCORSEL_0:
+            for(i = time_us; i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_1:
+            for(i = time_us; i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_2:
+            for(i = time_us; i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_3:
+            for(i = time_us; i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_4:
+            for(i = time_us; i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_5:
+            for(i = time_us; i > 0; i--) {
+                for(n = 3; n > 0; n--);
+            }
+            break;
+    }
+
+    /*
     if(clk_freq == CS_CTL0_DCORSEL_0) {         //MCLK = 1.5 MHz
         for(i = time_us; i > 0; i--) {
-            for(n = 320; n > 0; n--);
+
         }
     }
     else if(clk_freq == CS_CTL0_DCORSEL_1) {    //MCLK = 3 MHz
@@ -79,12 +112,13 @@ void delay_us(int time_us) {
     }
     else if(clk_freq == CS_CTL0_DCORSEL_4) {    //MCLK = 24 MHz
         for(i = time_us; i > 0; i--) {
-            for(n = 20; n > 0; n--);
+            for(n = 9; n > 0; n--);
         }
     }
     else if(clk_freq == CS_CTL0_DCORSEL_5) {    //MCLK = 48 MHz
         for(i = time_us; i > 0; i--) {
-            for(n = 10; n > 0; n--);
+            for(n = 3; n > 0; n--);
         }
-    }
+    } */
+
 }   // end delay_us()
