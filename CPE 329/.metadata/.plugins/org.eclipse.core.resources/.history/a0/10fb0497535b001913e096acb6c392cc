@@ -17,12 +17,8 @@ void main(void) {
     P4 ->SEL1 &= ~(BIT3);
     P4 ->DIR |= (BIT3);
 
-    P1 ->DIR |= BIT0;
-    P2 ->OUT |= BIT0;
-
     while(1){
-        P1 ->OUT ^= XOR_TOGGLE;
-        delay_us(40);
+
     }
 
 

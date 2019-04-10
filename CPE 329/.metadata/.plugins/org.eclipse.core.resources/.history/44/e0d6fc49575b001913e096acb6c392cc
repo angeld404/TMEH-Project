@@ -6,7 +6,7 @@
 #define FREQ_12_MHZ BIT3
 #define FREQ_24_MHZ BIT4
 #define FREQ_48_MHZ BIT5
-#define XOR_TOGGLE 0xFF
+#define EXOR_TOGGLE 0xFF
 
 
 void set_DCO(int Freq)
