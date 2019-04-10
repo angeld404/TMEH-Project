@@ -8,13 +8,11 @@
 #define FREQ_48_MHZ BIT5
 
 
-
-
 void set_DCO(int Freq)
 {
     CS->KEY = CS_KEY_VAL;
     CS->CTL1 |= (BIT1 | BIT0);
-    CS->CTL0 &= ~ CS_CTL0_DCORSEL_MASK;
+    CS->CTL0 &= ~(CS_CTL0_DCORSEL_MASK);
     if (Freq == FREQ_1_5_MHZ){
         CS->CTL0 |= CS_CTL0_DCORSEL_0;
     }
@@ -36,6 +34,14 @@ void set_DCO(int Freq)
         }
     else if(Freq == FREQ_48_MHZ)
         {
+            while ((PCM->CTL1 & PCM_CTL1_PMR_BUSY));
+            PCM->CTL0 = PCM_CTL0_KEY_VAL | PCM_CTL0_AMR_1;
+            while ((PCM->CTL1 & PCM_CTL1_PMR_BUSY));
+            /* Configure Flash wait-state to 1 for both banks 0 & 1 */
+            FLCTL->BANK0_RDCTL = (FLCTL->BANK0_RDCTL &
+             ~(FLCTL_BANK0_RDCTL_WAIT_MASK)) | FLCTL_BANK0_RDCTL_WAIT_1;
+            FLCTL->BANK1_RDCTL = (FLCTL->BANK0_RDCTL &
+             ~(FLCTL_BANK1_RDCTL_WAIT_MASK)) | FLCTL_BANK1_RDCTL_WAIT_1;
             CS->CTL0 |= CS_CTL0_DCORSEL_5;
         }
     else
@@ -45,3 +51,11 @@ void set_DCO(int Freq)
     CS->KEY &= 0x0000;
 
 }
+
+void delay_us(int time_us)
+{
+    int CLK_FRQ;
+    CLK_FRQ = (CS->CTL0) & (CS_CTL0_DCORSEL_MASK); //Mask
+}
+
+

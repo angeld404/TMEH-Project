@@ -9,9 +9,8 @@ void main(void) {
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
 
 
-    P1 ->DIR |= (BIT0);
-    P1 ->OUT |= (BIT0);
-    set_DCO(FREQ_3_MHZ);
+
+    set_DCO(FREQ_48_MHZ);
 
     //set P4.3 to MCLCK
     P4 ->SEL0 |= (BIT3);
