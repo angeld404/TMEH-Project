@@ -1,8 +1,13 @@
 #include "msp.h"
 #include "set_dco.h"
+#include "delay_us.h"
 
 /**
- * main.c
+ * Jonathan Lau, Angel Delgado
+ * CPE 329 Spring 2019
+ * Professor Hummel
+ *
+ * Assignment 2:  Blinking LED, Clock Control, and Software Delay
  */
 
 void main(void) {
@@ -10,7 +15,7 @@ void main(void) {
 
 
     //set MCLK to DCO at nominal 48 MHz
-    set_DCO(FREQ_3_MHZ);
+    set_DCO(FREQ_1_5_MHZ);
 
     //set P4.3 to MCLCK
     P4 ->SEL0 |= (BIT3);
@@ -19,13 +24,12 @@ void main(void) {
 
     P6 ->DIR |= BIT0;
     P6 ->OUT |= BIT0;
-    delay_us(40);
+    delay_us(0);
     P6 ->OUT &= ~BIT0;
 
     while(1){
         //P1 ->OUT ^= XOR_TOGGLE;
     }
-
 
  }
 
