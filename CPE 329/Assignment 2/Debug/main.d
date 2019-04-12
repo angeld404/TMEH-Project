@@ -17,6 +17,9 @@ main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/core_
 main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/system_msp432p401r.h
+main.obj: C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/string.h
+main.obj: C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/_ti_config.h
+main.obj: C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/linkage.h
 main.obj: ../set_dco.h
 main.obj: ../delay_us.h
 main.obj: ../LCD.h
@@ -39,6 +42,9 @@ C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/core_cm4.h:
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h: 
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/system_msp432p401r.h: 
+C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/string.h: 
+C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/_ti_config.h: 
+C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include/linkage.h: 
 ../set_dco.h: 
 ../delay_us.h: 
 ../LCD.h: 

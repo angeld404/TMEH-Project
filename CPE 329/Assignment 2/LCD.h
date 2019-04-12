@@ -7,7 +7,8 @@
 #define LCD_INSTR_PORTS (BIT0 | BIT1 | BIT2)
 #define LCD_INIT_SET (BIT5 | BIT4)
 #define LCD_DEFAULT_SET (BIT5 | BIT3)
-#define LCD_DISP_ON (BIT3 | BIT2 | BIT1 | BIT0)
+#define LCD_DISP_ON (BIT3 | BIT2)
+#define LCD_CURSOR_BLINK (BIT1 | BIT0)
 #define LCD_DISP_CLEAR BIT0
 #define LCD_SHIFT_RIGHT (BIT2 | BIT1)
 #define LCD_SHIFT_LEFT (BIT2)
@@ -46,7 +47,6 @@ void LCD_Instr(int Instruction)
     if (Instruction == LCD_DISP_CLEAR){
         delay_us(2000);
     }
-    else{}
 }   
 
 void LCD_Message(int Message)
@@ -69,5 +69,12 @@ void LCD_Message(int Message)
     P10->OUT &= ~(BIT2); //E Low
     delay_us(40);
 
+}
+
+void Write_string_LCD(char *phrase) {
+    int i;
+    for(i = 0; i < strlen(phrase); i++) {
+        LCD_Message(phrase[i]);
+    }
 }
 

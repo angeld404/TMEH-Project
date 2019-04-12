@@ -1,4 +1,5 @@
 #include "msp.h"
+#include<string.h>
 #include "set_dco.h"
 #include "delay_us.h"
 #include "LCD.h"
@@ -34,11 +35,17 @@ void main(void) {
     LCD_Instr(LCD_DISP_CLEAR);
     LCD_Instr(LCD_SHIFT_RIGHT);
     LCD_Instr(0x02);
-    LCD_Message('H');
+    //LCD_Message('H');
+    //Write_string_LCD("Hello World");
 
 
     while(1){
-        //P1 ->OUT ^= XOR_TOGGLE;
+        LCD_Instr(LCD_DISP_CLEAR);
+
+        delay_us(700000);
+        Write_string_LCD("Hello World!!!!!!!!!!!!!");
+        delay_us(700000);
+
     }
 
  }
