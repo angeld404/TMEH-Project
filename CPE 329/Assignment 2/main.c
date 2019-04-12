@@ -1,6 +1,7 @@
 #include "msp.h"
 #include "set_dco.h"
 #include "delay_us.h"
+#include "LCD.h"
 
 /**
  * Jonathan Lau, Angel Delgado
@@ -15,9 +16,9 @@ void main(void) {
 
 
     //set MCLK to DCO at nominal 48 MHz
-    set_DCO(FREQ_1_5_MHZ);
+    set_DCO(FREQ_6_MHZ);
 
-    //set P4.3 to MCLCK
+    /*set P4.3 to MCLCK
     P4 ->SEL0 |= (BIT3);
     P4 ->SEL1 &= ~(BIT3);
     P4 ->DIR |= (BIT3);
@@ -25,7 +26,15 @@ void main(void) {
     P6 ->DIR |= BIT0;
     P6 ->OUT |= BIT0;
     delay_us(0);
-    P6 ->OUT &= ~BIT0;
+    P6 ->OUT &= ~BIT0;*/
+    LCD_Instr(LCD_INIT_SET);
+    LCD_Instr(LCD_DEFAULT_SET);
+    LCD_Instr(LCD_DEFAULT_SET);
+    LCD_Instr(LCD_DISP_ON);
+    LCD_Instr(LCD_DISP_CLEAR);
+    LCD_Instr(LCD_SHIFT_RIGHT);
+    LCD_Message('H');
+
 
     while(1){
         //P1 ->OUT ^= XOR_TOGGLE;

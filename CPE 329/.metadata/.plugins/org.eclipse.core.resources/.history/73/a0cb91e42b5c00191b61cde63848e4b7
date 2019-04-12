@@ -1,0 +1,46 @@
+#include "msp.h"
+
+#define RS BIT0
+#define RW BIT1
+#define E BIT2
+#define LCD_INIT_SET (BIT5 | BIT4)
+#define LCD_DEFAULT_SET (BIT5 | BIT3)
+#define LCD_DISP_ON (BIT7)
+
+
+
+/*
+ * LCD.h
+ *
+ *  Created on: Apr 10, 2019
+ *      Author: Jonathan Lau, Angle Delgado
+ */
+
+void LDC_Instr(int Message)
+{
+    int Message1 = Message;
+    int Message0 = Message<<4;
+    P9->DIR = 0x00;
+    P9->OUT &= ~(BIT0 | BIT1 |BIT2);//set RS RW & E
+    P9->OUT |= (Message1);
+    P9->OUT |= (BIT2); //E High
+    delay_us(0);
+    P9->OUT &= ~(BIT2); //E Low
+    if (Message == LCD_INIT_SET){
+        delay_us(40);
+        return;
+    }
+    delay_us(0);
+    P9->OUT |= (Message0);
+    P9->OUT |= (BIT2); //E High
+    delay_us(0);
+    P9->OUT &= ~(BIT2); //E Low
+    delay_us(40);
+}   
+
+void Disp_ON_OFF(int)
+{
+
+}
+
+
