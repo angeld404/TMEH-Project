@@ -33,8 +33,7 @@ void main(void) {
     LCD_Instr(LCD_DISP_ON);
     LCD_Instr(LCD_DISP_CLEAR);
     LCD_Instr(LCD_SHIFT_RIGHT);
-    LCD_Instr(0x02);
-    LCD_Message('H');
+    LCD_Message(0x48);
 
 
     while(1){

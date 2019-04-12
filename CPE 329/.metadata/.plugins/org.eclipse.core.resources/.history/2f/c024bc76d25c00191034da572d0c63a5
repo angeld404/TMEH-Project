@@ -12,7 +12,6 @@
 #define LCD_SHIFT_RIGHT (BIT2 | BIT1)
 #define LCD_SHIFT_LEFT (BIT2)
 #define LCD_DISP_SHIFT (BIT0)
-#define LCD_CURSOR_HOME 0x02
 
 
 
@@ -38,6 +37,9 @@ void LCD_Instr(int Instruction)
         delay_us(40);
         return;
     }
+    else {
+    }
+    delay_us(0);
     P9->OUT = (Instruction0);
     P10->OUT |= (BIT2); //E High
     delay_us(0);
