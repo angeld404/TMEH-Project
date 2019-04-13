@@ -15,9 +15,10 @@
 #define RW BIT1
 #define E BIT2
 #define LCD_INSTR_PORTS (BIT0 | BIT1 | BIT2)
+#define LCD_DB_PORTS (BIT7 | BIT6 | BIT5 | BIT4)
 #define LCD_INIT_SET (BIT5 | BIT4)
 #define LCD_DEFAULT_SET (BIT5 | BIT3)
-#define LCD_DISP_ON (BIT3 | BIT2)
+#define LCD_DISP_ON (BIT3 | BIT2 | BIT1 | BIT0)
 #define LCD_CURSOR_BLINK (BIT1 | BIT0)
 #define LCD_DISP_CLEAR BIT0
 #define LCD_SHIFT_RIGHT (BIT2 | BIT1)
@@ -29,9 +30,9 @@
 void LCD_Instr(int Instruction) {           //executes LCD instructions
     int Instruction1 = Instruction;
     int Instruction0 = Instruction<<4;
-    P9->DIR |= (BIT7 | BIT6 | BIT5 | BIT4);
+    P9->DIR |= LCD_DB_PORTS;
     P10->DIR |= LCD_INSTR_PORTS;
-    P10->OUT &= ~(BIT0 |BIT1 |BIT2);        //set RS RW & E Low
+    P10->OUT &= ~LCD_INSTR_PORTS;        //set RS RW & E Low
     P9->OUT = Instruction1;
     P10->OUT |= (BIT2);     //E High
     delay_us(0);
@@ -46,9 +47,6 @@ void LCD_Instr(int Instruction) {           //executes LCD instructions
     delay_us(0);
     P10->OUT &= ~(BIT2);    //E Low
     delay_us(40);
-    if (Instruction == LCD_DISP_CLEAR){
-        delay_us(2000);
-    }
 }
 
 void LCD_initialize() {
@@ -57,8 +55,11 @@ void LCD_initialize() {
     LCD_Instr(LCD_DEFAULT_SET);
     LCD_Instr(LCD_DISP_ON);
     LCD_Instr(LCD_DISP_CLEAR);
+    delay_us(2100);
     LCD_Instr(LCD_SHIFT_RIGHT);
+    delay_us(40);
     LCD_Instr(LCD_CURSOR_HOME);
+    delay_us(40);
 }
 
 void Clear_LCD() {
