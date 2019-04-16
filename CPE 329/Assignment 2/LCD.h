@@ -49,7 +49,7 @@ void LCD_Instr(int Instruction) {           //executes LCD instructions
     delay_us(40);
 }
 
-void LCD_initialize() {
+void LCD_init() {
     LCD_Instr(LCD_INIT_SET);
     LCD_Instr(LCD_DEFAULT_SET);
     LCD_Instr(LCD_DEFAULT_SET);

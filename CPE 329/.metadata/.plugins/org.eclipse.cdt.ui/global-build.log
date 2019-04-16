@@ -6895,3 +6895,1300 @@ Finished building target: "Assignment 2.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../keypad.c", line 27: warning #225-D: function "LCD_initialize" declared implicitly
+"../keypad.c", line 31: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building file: "../LCD.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="LCD.d_raw"  "../LCD.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../LCD.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./LCD.obj" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+error #10056: symbol "Clear_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "delay_us" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "Home_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "LCD_Instr" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "main" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "Write_string_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "LCD_init" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "Write_char_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+error #10056: symbol "set_DCO" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+ 
+>> Compilation failure
+makefile:144: recipe for target 'Assignment 2.out' failed
+error #10010: errors encountered during linking; "Assignment 2.out" not built
+gmake[1]: *** [Assignment 2.out] Error 1
+makefile:140: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./LCD.obj" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+error #10056: symbol "Clear_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "delay_us" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "Home_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "LCD_Instr" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "main" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "Write_string_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "LCD_init" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+error #10056: symbol "Write_char_LCD" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+error #10056: symbol "set_DCO" redefined: first defined in "./LCD.obj"; redefined in "./keypad.obj"
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+ 
+>> Compilation failure
+makefile:144: recipe for target 'Assignment 2.out' failed
+error #10010: errors encountered during linking; "Assignment 2.out" not built
+gmake[1]: *** [Assignment 2.out] Error 1
+makefile:140: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+ 
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+ undefined      first referenced
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+ 
+>> Compilation failure
+makefile:143: recipe for target 'Assignment 2.out' failed
+  symbol            in file     
+ ---------      ----------------
+ LCD_initialize ./keypad.obj    
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "Assignment 2.out" not built
+gmake[1]: *** [Assignment 2.out] Error 1
+gmake: *** [all] Error 2
+makefile:139: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\keypad.h", line 36: warning #994-D: missing return statement at end of non-void function "keypad_sweep"
+"../keypad.c", line 28: warning #225-D: function "LCD_initialize" declared implicitly
+"../keypad.c", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+ 
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+ undefined      first referenced
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+ 
+>> Compilation failure
+makefile:143: recipe for target 'Assignment 2.out' failed
+  symbol            in file     
+ ---------      ----------------
+ LCD_initialize ./keypad.obj    
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "Assignment 2.out" not built
+gmake[1]: *** [Assignment 2.out] Error 1
+makefile:139: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\keypad.h", line 36: warning #994-D: missing return statement at end of non-void function "keypad_sweep"
+"../keypad.c", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\keypad.h", line 54: warning #176-D: expression has no effect
+"../keypad.c", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\keypad.h", line 54: warning #176-D: expression has no effect
+"../keypad.c", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../keypad.c", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../keypad.c", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'Assignment 2.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Assignment 2 ****
+
+"C:\\Users\\jonat\\OneDrive\\Documents\\ccs\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../keypad.c"
+Invoking: ARM Compiler
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS" --include_path="C:/Users/jonat/OneDrive/Documents/GitHub/TMEH-Project/CPE 329/Assignment 2" --include_path="C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="keypad.d_raw"  "../keypad.c"
+"..\set_dco.h", line 46: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\set_dco.h", line 48: remark #1528-D: (ULP 3.1) Detected flag polling using PCM_CTL1_PMR_BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"..\delay_us.h", line 17: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 22: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 28: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 32: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 37: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 38: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 42: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"..\delay_us.h", line 43: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+Finished building: "../keypad.c"
+ 
+Building target: "Assignment 2.out"
+Invoking: ARM Linker
+"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Assignment 2.map" --heap_size=1024 --stack_size=512 -i"C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/lib" -i"C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Assignment 2_linkInfo.xml" --rom_model -o "Assignment 2.out" "./keypad.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 4 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 5 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 6 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 7 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 8 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 9 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 10 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "Assignment 2.out"
+ 
+
+**** Build Finished ****

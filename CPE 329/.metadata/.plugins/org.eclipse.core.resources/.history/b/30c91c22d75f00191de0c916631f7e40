@@ -1,0 +1,27 @@
+#include "msp.h"
+
+/*
+ * delay_us.h
+ *
+ *  Created on: Apr 10, 2019
+ *      Author: Jonathan Lau, Angle Delgado
+ */
+
+#ifndef KEYPAD_H_
+#define KEYPAD_H_
+
+#define KEYPAD_READ (BIT0 | BIT1 | BIT2 | BIT3)
+#define KEYPAD_SWEEP (BIT0 | BIT1 | BIT2)
+
+void keypad_init() {
+    //designate P7 as sweep pins, P8 as read pins
+    P7->DIR |= KEYPAD_SWEEP;
+    P8->DIR |= KEYPAD_READ;
+}   // end keypad_init()
+
+int keypad_sweep() {
+
+}   //end keypad_sweep()
+
+
+#endif /* KEYPAD_H_ */

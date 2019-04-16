@@ -1,0 +1,71 @@
+/**
+ *  keypad.c
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ *  Assignment 4: keypad
+ */
+
+#include "msp.h"
+
+#ifndef KEYPAD_H_
+#define KEYPAD_H_
+
+#define COL1 BIT0
+#define COL2 BIT1
+#define COL3 BIT2
+
+#define ROW1 BIT4
+#define ROW2 BIT5
+#define ROW3 BIT6
+#define ROW4 BIT7
+
+#define ROW_MASK (BIT4 | BIT5 | BIT6 | BIT7)
+
+void keypad_init() {
+    //designate P7 as keypad pins
+    //  BIT0-BIT2 --> sweep columns
+    //  BIT4-BIT7 --> read rows
+
+    P7->DIR |= (COL1 | COL2 | COL3);
+    P7->DIR &= ~(ROW1 | ROW2 | ROW3 | ROW4);
+
+    P7->REN |= (ROW1 | ROW2 | ROW3 | ROW4);
+    P7->OUT &= ~(ROW1 | ROW2 | ROW3 | ROW4);
+
+}   // end keypad_init()
+
+int keypad_sweep() {
+    int rows, col, key;
+
+    P7->OUT &= ~(COL1 | COL2 | COL3);
+
+
+    for(col = 0; col <3; col++) {
+        P7->OUT &= ~(COL1 | COL2 | COL3);
+        P7->OUT |= ( (COL1 << col) & (~ROW_MASK) );
+        _delay_cycles(25);
+        rows = (P7->IN & ROW_MASK);
+        if(rows != 0) break;
+    }
+    P7->OUT &= ~(COL1 | COL2 | COL3);
+    rows >> 4;
+
+    if(col == 3) return 0xFF;
+    if(rows == 4) rows = 3;
+    if(rows == 8) rows = 4;
+
+    key = rows*3 + col - 2;
+
+    if(key == 11) key = 0;
+    if(key == 10) key = '*';
+    if(key == 12) key = '#';
+    key += '0';
+
+    return key;
+}   //end keypad_sweep()
+
+
+#endif /* KEYPAD_H_ */
