@@ -29,16 +29,18 @@ void main(void) {
     keypad_init();
     //LCD_Instr(LCD_DISP_ON & (~LCD_CURSOR_BLINK));
 
-    //blink phrase "Hello World" indefinitely
+    //INTERRUPT ENABLE
+    P4->IES |= (ROW1|ROW2|ROW3|ROW4); //Set Interrupt on High to Low Transition
+    P4->IFG &= ~(ROW1|ROW2|ROW3|ROW4); //Clear Interrupt Flag
+    P4->IE |= (ROW1|ROW2|ROW3|ROW4); //Enable Interrupts
+    NVIC->ISER[1] = 1<<(PORT4_IRQn&31); //Enable NVIC
+    __enable_irq(); //Enable Interrupts Globally
+
     while(1){
-        char key = keypad_sweep();
-        if(key != 0xFF) {
-            Write_char_LCD(key);
-        }
-        delay_us(80000);
-        delay_us(50000);
     }
 
  }
+
+
 
 
