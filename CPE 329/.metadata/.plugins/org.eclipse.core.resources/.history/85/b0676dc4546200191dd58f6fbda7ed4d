@@ -1,0 +1,52 @@
+#include "msp.h"
+
+/*
+ * delay_us.h
+ *
+ *  Created on: Apr 10, 2019
+ *      Author: Jonathan Lau, Angle Delgado
+ */
+
+#ifndef DELAY_US_H_
+#define DELAY_US_H_
+
+void delay_us(int time_us) {
+    int i, n;     //i, n counter variables
+    switch((CS->CTL0) & (CS_CTL0_DCORSEL_MASK)) {
+        case CS_CTL0_DCORSEL_0:
+            for(i = (time_us/6); i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_1:
+            for(i = (time_us/2); i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_2:
+            for(i = time_us/3 + 2; i > 0; i--) {
+                for(n = 0; n > 0; n--);
+            }
+            break;
+        case CS_CTL0_DCORSEL_3:
+            for(i = time_us+2; i > 0; i--) {
+
+            }
+            break;
+        case CS_CTL0_DCORSEL_4:
+            for(i = time_us; i > 0; i--) {
+                for(n = 1; n > 0; n--);
+            }
+            break;
+        case CS_CTL0_DCORSEL_5:
+            for(i = time_us; i > 0; i--) {
+                for(n = 3; n > 0; n--);
+            }
+            break;
+    }
+
+}   // end delay_us()
+
+
+
+#endif /* DELAY_US_H_ */

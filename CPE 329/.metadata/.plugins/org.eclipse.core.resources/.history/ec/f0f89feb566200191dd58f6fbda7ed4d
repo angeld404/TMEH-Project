@@ -1,0 +1,45 @@
+/*
+ *  LCD.h
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ *  Assignment 3: LCD Display
+ */
+
+#include "msp.h"
+#include <string.h>
+
+#ifndef LCD_H_
+#define LCD_H_
+
+#define RS BIT0
+#define RW BIT1
+#define E BIT2
+#define LCD_INSTR_PORTS (BIT0 | BIT1 | BIT2)
+#define LCD_DB_PORTS (BIT7 | BIT6 | BIT5 | BIT4)
+#define LCD_INIT_SET (BIT5 | BIT4)
+#define LCD_DEFAULT_SET (BIT5 | BIT3)
+#define LCD_DISP_ON (BIT3 | BIT2 | BIT1 | BIT0)
+#define LCD_CURSOR_BLINK (BIT1 | BIT0)
+#define LCD_DISP_CLEAR BIT0
+#define LCD_SHIFT_RIGHT (BIT2 | BIT1)
+#define LCD_SHIFT_LEFT (BIT2)
+#define LCD_DISP_SHIFT (BIT0)
+#define LCD_CURSOR_HOME 0x02
+#define LCD_ADDR_LINE_2 0xC0
+
+void LCD_Instr(int Instruction);
+
+void LCD_init();
+
+void Clear_LCD();
+
+void Home_LCD();
+
+void LCD_char_write(int Message);
+
+void LCD_string_write(char *phrase);
+
+#endif

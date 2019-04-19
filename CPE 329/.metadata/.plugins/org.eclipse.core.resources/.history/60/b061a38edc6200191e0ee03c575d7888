@@ -1,0 +1,14 @@
+/*
+ * delay_us.h
+ *
+ *  Created on: Apr 10, 2019
+ *      Author: Jonathan Lau, Angle Delgado
+ */
+
+#include "msp.h"
+
+
+#define DELAY_US_H_
+
+void delay_us(int time_us);
+

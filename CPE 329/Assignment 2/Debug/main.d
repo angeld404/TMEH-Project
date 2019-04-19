@@ -24,6 +24,8 @@ main.obj: ../set_dco.h
 main.obj: ../delay_us.h
 main.obj: ../LCD.h
 main.obj: ../delay_us.h
+main.obj: ../keypad.h
+main.obj: ../lock.h
 
 ../main.c: 
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/msp.h: 
@@ -49,3 +51,5 @@ C:/Users/jonat/OneDrive/Documents/ccs/tools/compiler/ti-cgt-arm_18.12.1.LTS/incl
 ../delay_us.h: 
 ../LCD.h: 
 ../delay_us.h: 
+../keypad.h: 
+../lock.h: 
