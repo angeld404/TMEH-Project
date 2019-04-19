@@ -45,45 +45,14 @@ void keypad_init() {
 int keypad_sweep() {
     int rows, col, key;
 
-    P4->OUT &= ~(COL1 | COL2 | COL3);
-
-
-    for(col = 0; col <3; col++) {
-        P4->OUT &= ~(COL1 | COL2 | COL3);
-        P4->OUT |= ( (COL1 << col) & (~ROW_MASK) );
-        _delay_cycles(25);
-        rows = (P4->IN & ROW_MASK);
-        if(rows != 0) break;
-    }
-    P4->OUT &= ~(COL1 | COL2 | COL3);
-    rows = rows >> 4;
-
-    if(col == 3) return 0xFF;
-    if(rows == 4) rows = 3;
-    if(rows == 8) rows = 4;
-
-    key = rows*3 + col - 2;
-
-    if(key == 11) key = 0;
-    if(key == 10) key = ASCII_ASTERISK - '0';
-    if(key == 12) key = ASCII_POUND - '0';
-    key += '0';
-
-    return key;
-}   //end keypad_sweep()
-
-void PORT4_IRQHandler(void){
-    int rows, col, key;
-
     P4->OUT |= (COL1 | COL2 | COL3);
 
-
-    for(col = 0; col <3; col++) {
+    for(col = 0; col < 3; col++) {
         P4->OUT |= (COL1 | COL2 | COL3);
         P4->OUT &= ((~(COL1 << col)) | (ROW_MASK));
         _delay_cycles(25);
         rows = (P4->IN & ROW_MASK);
-        if(rows != 240) break;
+        if(rows != ROW_MASK) break;
     }
     rows = rows >> 4;
 
@@ -99,13 +68,15 @@ void PORT4_IRQHandler(void){
     if(key == 10) key = ASCII_ASTERISK - '0';
     if(key == 12) key = ASCII_POUND - '0';
     key += '0';
-    if(key != 0xFF) {
-        Write_char_LCD(key);
-    }
+
+    return key;
+}   //end keypad_sweep()
+
+void PORT4_IRQHandler(void){
+
+
     P4->OUT &= ~(COL1 | COL2 | COL3);
     P4->IFG &= ~(ROW1|ROW2|ROW3|ROW4);
-
-
 
 }
 

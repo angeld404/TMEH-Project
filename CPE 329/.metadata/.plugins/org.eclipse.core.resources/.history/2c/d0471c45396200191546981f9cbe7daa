@@ -1,0 +1,24 @@
+/**
+ *  lock.h
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ *  Project 1: keypad lock
+ */
+
+#include "msp.h"
+
+#ifndef LOCK_H_
+#define LOCK_H_
+
+#define LOCKED (1)
+#define UNLOCKED (2)
+#define SET_LOCK (3)
+
+void Lock_state(int lockstate, int pw) {
+
+}
+
+#endif /* LOCK_H_ */

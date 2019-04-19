@@ -1,0 +1,18 @@
+/**
+ *  lock.h
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ *  Project 1: keypad lock
+ */
+
+#include "msp.h"
+
+#ifndef LOCK_H_
+#define LOCK_H_
+
+
+
+#endif /* LOCK_H_ */

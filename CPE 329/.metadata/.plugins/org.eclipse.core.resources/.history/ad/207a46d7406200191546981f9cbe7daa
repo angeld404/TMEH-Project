@@ -1,0 +1,59 @@
+/**
+ *  lock.h
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ *  Project 1: keypad lock
+ */
+
+#include "msp.h"
+
+#ifndef LOCK_H_
+#define LOCK_H_
+
+#define PW_CLEARED (99999)
+
+#define LOCKED (1)
+#define UNLOCKED (2)
+#define SET_LOCK (3)
+
+void Lock_state(int pw) {
+    switch(pw) {
+        case PW_CLEARED:
+            break;
+    }
+}
+
+int Lock_read_key() {
+
+
+    for(pw_pos = 3; pw_pos >= 0; pw_pos--) {
+        __wfi();
+        entered_key = keypad_sweep();
+
+        switch(pw_pos) {
+            case 3:
+                pw += (entered_key * 1000);
+                break;
+            case 2:
+                pw += (entered_key * 100);
+                break;
+            case 1:
+                pw += (entered_key * 10);
+                break;
+            case 0:
+                pw += (entered_key);
+                break;
+        }
+
+        if(entered_key == '*') {
+            return PW_CLEARED;
+        }
+
+    }   //end for(pw_pos = 3; pw_pos >= 0; pw_pos--)
+    return pw;
+}   //end Lock_read_key()
+
+#endif /* LOCK_H_ */

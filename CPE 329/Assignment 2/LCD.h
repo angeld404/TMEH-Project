@@ -70,7 +70,7 @@ void Home_LCD() {
     LCD_Instr(LCD_CURSOR_HOME);
 }
 
-void Write_char_LCD(int Message) {
+void LCD_char_write(int Message) {
 
     int Message1 = Message;
     int Message0 = Message<<4;
@@ -91,9 +91,9 @@ void Write_char_LCD(int Message) {
 
 }
 
-void Write_string_LCD(char *phrase) {
+void LCD_string_write(char *phrase) {
     int i;
     for(i = 0; i < strlen(phrase); i++) {
-        Write_char_LCD(phrase[i]);
+        LCD_char_write(phrase[i]);
     }
 }

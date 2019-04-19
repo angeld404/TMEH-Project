@@ -10,10 +10,13 @@
 
 #include "msp.h"
 #include <string.h>
+
 #include "set_dco.h"
 #include "delay_us.h"
 #include "LCD.h"
 #include "keypad.h"
+#include "lock.h"
+
 
 void main(void) {
 
@@ -36,7 +39,26 @@ void main(void) {
     NVIC->ISER[1] = 1<<(PORT4_IRQn&31); //Enable NVIC
     __enable_irq(); //Enable Interrupts Globally
 
-    while(1){
+    int lockstate = LOCKED;
+    int pw_key = 1234;
+    int pw = 0;
+
+    while(1) {
+        //pw = Lock_read_keypad();
+        lockstate = Lock_fsm(pw, pw_key, lockstate);
+        if(lockstate != UNLOCKED) {
+
+            if(lockstate == SET_LOCK) {
+                pw_key = Lock_read_key();
+            } else {
+                pw = Lock_read_key();
+            }
+        }
+
+
+        //entered_key = keypad_sweep();
+        //Write_char_LCD(entered_key);
+
     }
 
  }

@@ -1,0 +1,91 @@
+/**
+ *  lock.h
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ *  Project 1: keypad lock
+ */
+
+#include "msp.h"
+
+#ifndef LOCK_H_
+#define LOCK_H_
+
+#define PW_CLEARED (99999)
+
+#define LOCKED (1)
+#define UNLOCKED (2)
+#define SET_LOCK (3)
+
+void Lock_fsm(int pw, int pw_key, int lockstate) {
+    LCD_Instr(LCD_DISP_CLEAR);
+    LCD_Instr(LCD_CURSOR_HOME);
+
+    if(lockstate == LOCKED) {
+        LCD_string_write("LOCKED");
+        LCD_Instr(LCD_ADDR_LINE_2);
+        LCD_string_write("ENTER KEY: ");
+        if(pw == pw_key) {
+            return UNLOCKED;
+        } else {
+            return LOCKED;
+        }
+    } else if(lockstate == UNLOCKED) {
+        LCD_string_write("UNLOCKED");
+        LCD_Instr(LCD_ADDR_LINE_2);
+        LCD_string_write("# TO SET NEW KEY");
+        if(Check_pound()) {
+            return SET_LOCK;
+        } else {
+            return LOCKED;
+        }
+    } else if(lockstate == SET_LOCK) {
+        LCD_string_write("SETTING NEW KEY");
+        LCD_Instr(LCD_ADDR_LINE_2);
+        LCD_string_write("ENTER KEY: ");
+        return LOCKED;
+    }
+}
+
+
+bool Check_pound() {
+    __wfi();
+    int entered_key = keypad_sweep();
+    if(entered_key == '#') {
+        return true;
+    } else return false;
+}
+
+int Lock_read_key() {
+
+
+    for(pw_pos = 3; pw_pos >= 0; pw_pos--) {
+        __wfi();
+        entered_key = keypad_sweep();
+
+        switch(pw_pos) {
+            case 3:
+                pw += (entered_key * 1000);
+                break;
+            case 2:
+                pw += (entered_key * 100);
+                break;
+            case 1:
+                pw += (entered_key * 10);
+                break;
+            case 0:
+                pw += (entered_key);
+                break;
+        }
+
+        if(entered_key == '*') {
+            return PW_CLEARED;
+        }
+
+    }   //end for(pw_pos = 3; pw_pos >= 0; pw_pos--)
+    return pw;
+}   //end Lock_read_key()
+
+#endif /* LOCK_H_ */
