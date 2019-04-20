@@ -5,7 +5,7 @@
  *  CPE 329 Spring 2019
  *  Professor Hummel
  *
- *  Assignment 3: LCD Display
+ *
  */
 
 #include "msp.h"

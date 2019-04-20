@@ -1,3 +1,11 @@
+/*
+ *  LCD.c
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ */
 
 #include "msp.h"
 #include "LCD.h"
@@ -23,7 +31,7 @@ void LCD_Instr(int Instruction) {           //executes LCD instructions
     delay_us(1);
     P10->OUT &= ~(BIT2);    //E Low
     delay_us(40);
-}
+}   //end LCD_Instr()
 
 void LCD_init() {       //initialize LCD
     LCD_Instr(LCD_INIT_SET);
@@ -36,17 +44,18 @@ void LCD_init() {       //initialize LCD
     delay_us(40);
     LCD_Instr(LCD_CURSOR_HOME);
     delay_us(40);
-}
+}   //end LCD_init
 
-void LCD_clear() {
+void LCD_clear() {      //clear LCD
     LCD_Instr(LCD_DISP_CLEAR);
-}
+    delay_us(2000);     //delay makes LCD print properly
+}   //end LCD_clear()
 
-void LCD_home() {
+void LCD_home() {       //brings cursor to top left of LCD
     LCD_Instr(LCD_CURSOR_HOME);
-}
+}   //end LCD_home()
 
-void LCD_char_write(int Message) {
+void LCD_char_write(int Message) {      //print a char to LCD
 
     int Message1 = Message;
     int Message0 = Message<<4;
@@ -65,13 +74,13 @@ void LCD_char_write(int Message) {
     P10->OUT &= ~(BIT2); //E Low
     delay_us(40);
 
-}
+}   //end LCD_char_write()
 
-void LCD_string_write(char *phrase) {
+void LCD_string_write(char *phrase) {       //print a string to LCD
     int i;
 
     for(i = 0; i < strlen(phrase); i++) {
         LCD_char_write(phrase[i]);
     }
-}
+}   //end LCD_string_write()
 

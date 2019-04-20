@@ -5,7 +5,7 @@
  *  CPE 329 Spring 2019
  *  Professor Hummel
  *
- *  Project 1: keypad lock
+ *  Project 1: Digital Lock
  */
 
 #include "msp.h"
@@ -18,13 +18,18 @@
 #define UNLOCKED        (2)
 #define SET_LOCK        (3)
 
+//check if '#' is pressed, for setting new key
 int Check_pound();
 
+//FSM description of digital lock
 int Lock_fsm(int pw, int pw_key, int lockstate);
 
+//reads keys entered by user via keypad
 int Lock_read_key();
 
+//writes appropriate text on LCD according to current state
 void Lock_write(int lockstate);
 
+//interrupt triggered by keypad pins
 void PORT4_IRQHandler(void);
 

@@ -1,8 +1,10 @@
-/*
- * delay_us.h
+/**
+ *  delay_us.h
  *
- *  Created on: Apr 10, 2019
- *      Author: Jonathan Lau, Angle Delgado
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
  */
 
 #include "msp.h"

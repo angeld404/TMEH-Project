@@ -1,3 +1,11 @@
+/**
+ *  keypad.c
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ */
 
 #include "msp.h"
 #include "keypad.h"

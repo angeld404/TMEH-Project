@@ -1,11 +1,10 @@
 /**
- *  keypad.c
+ *  keypad.h
  *
  *  Jonathan Lau, Angel Delgado
  *  CPE 329 Spring 2019
  *  Professor Hummel
  *
- *  Assignment 4: keypad
  */
 
 #include "msp.h"

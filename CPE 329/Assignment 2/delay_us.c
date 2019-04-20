@@ -1,3 +1,12 @@
+/**
+ *  delay_us.c
+ *
+ *  Jonathan Lau, Angel Delgado
+ *  CPE 329 Spring 2019
+ *  Professor Hummel
+ *
+ */
+
 #include "msp.h"
 #include "delay_us.h"
 

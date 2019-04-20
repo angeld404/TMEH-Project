@@ -6,6 +6,8 @@
  *  Professor Hummel
  *
  *  Project 1: Digital Lock
+ *
+ *  Default password is 7777
  */
 
 #include "msp.h"
@@ -60,9 +62,9 @@ void main(void) {
         //update digital lock state
         lockstate = Lock_fsm(pw, pw_key, lockstate);
 
-    }
+    }   //end while(1)
 
- }
+ }  //end main()
 
 
 

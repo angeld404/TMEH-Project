@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v18.12.1                    
 ******************************************************************************
->> Linked Fri Apr 19 14:30:47 2019
+>> Linked Fri Apr 19 17:53:09 2019
 
 OUTPUT FILE NAME:   <Assignment 2.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000c85
@@ -41,8 +41,8 @@ section   page    origin      length       input sections
 
 .text      0    000000e4    00000c0c     
                   000000e4    00000334     system_msp432p401r.obj (.text)
-                  00000418    000001c4     lock.obj (.text)
-                  000005dc    000001a4     LCD.obj (.text)
+                  00000418    000001bc     lock.obj (.text)
+                  000005d4    000001ac     LCD.obj (.text)
                   00000780    00000184     main.obj (.text)
                   00000904    00000124     delay_us.obj (.text)
                   00000a28    00000114     keypad.obj (.text)
@@ -79,8 +79,8 @@ MODULE SUMMARY
        ------                        ----   -------   -------
     .\
        system_msp432p401r.obj        820    0         8      
-       lock.obj                      452    0         0      
-       LCD.obj                       420    0         0      
+       lock.obj                      444    0         0      
+       LCD.obj                       428    0         0      
        main.obj                      388    0         0      
        delay_us.obj                  292    0         0      
        keypad.obj                    276    0         0      
@@ -149,14 +149,14 @@ address   name
 00000ce7  FLCTL_IRQHandler              
 00000ce7  FPU_IRQHandler                
 00000ce7  HardFault_Handler             
-000005dd  LCD_Instr                     
+000005d5  LCD_Instr                     
 000006c1  LCD_char_write                
-000006ad  LCD_clear                     
+000006a5  LCD_clear                     
 000006b7  LCD_home                      
-0000066b  LCD_init                      
+00000663  LCD_init                      
 00000749  LCD_string_write              
 00000433  Lock_fsm                      
-000004e1  Lock_read_key                 
+000004d9  Lock_read_key                 
 00000483  Lock_write                    
 00000ce7  MemManage_Handler             
 00000ce7  NMI_Handler                   
@@ -164,8 +164,8 @@ address   name
 00000ce7  PORT1_IRQHandler              
 00000ce7  PORT2_IRQHandler              
 00000ce7  PORT3_IRQHandler              
-00000571  PORT4_IRQHandler              
-00000571  PORT4_IRQHandler              
+00000569  PORT4_IRQHandler              
+00000569  PORT4_IRQHandler              
 00000ce7  PORT5_IRQHandler              
 00000ce7  PORT6_IRQHandler              
 00000ce7  PSS_IRQHandler                
@@ -238,12 +238,12 @@ address   name
 00000419  Check_pound                   
 00000433  Lock_fsm                      
 00000483  Lock_write                    
-000004e1  Lock_read_key                 
-00000571  PORT4_IRQHandler              
-00000571  PORT4_IRQHandler              
-000005dd  LCD_Instr                     
-0000066b  LCD_init                      
-000006ad  LCD_clear                     
+000004d9  Lock_read_key                 
+00000569  PORT4_IRQHandler              
+00000569  PORT4_IRQHandler              
+000005d5  LCD_Instr                     
+00000663  LCD_init                      
+000006a5  LCD_clear                     
 000006b7  LCD_home                      
 000006c1  LCD_char_write                
 00000749  LCD_string_write              
