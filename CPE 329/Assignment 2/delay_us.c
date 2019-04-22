@@ -12,7 +12,7 @@
 
 void delay_us(int time_us) {
     int i, n;     //i, n counter variables
-    switch((CS->CTL0) & (CS_CTL0_DCORSEL_MASK)) {
+    switch((CS->CTL0) & (CS_CTL0_DCORSEL_MASK)) { //Count cases for each clock frequency
         case CS_CTL0_DCORSEL_0:
             for(i = (time_us/6); i > 0; i--) {
 

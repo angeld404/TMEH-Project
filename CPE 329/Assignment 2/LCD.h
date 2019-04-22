@@ -15,11 +15,11 @@
 #ifndef LCD_H_
 #define LCD_H_
 
-#define RS      (BIT0)
+#define RS      (BIT0) //define instruction bits
 #define RW      (BIT1)
 #define E       (BIT2)
 
-#define LCD_INSTR_PORTS     (BIT0 | BIT1 | BIT2)
+#define LCD_INSTR_PORTS     (BIT0 | BIT1 | BIT2) //predefined instruction/message values
 #define LCD_DB_PORTS        (BIT7 | BIT6 | BIT5 | BIT4)
 #define LCD_INIT_SET        (BIT5 | BIT4)
 #define LCD_DEFAULT_SET     (BIT5 | BIT3)
@@ -32,7 +32,7 @@
 #define LCD_CURSOR_HOME     (0x02)
 #define LCD_ADDR_LINE_2     (0xC0)
 
-void LCD_Instr(int Instruction);
+void LCD_Instr(int Instruction); //Function Declarations
 
 void LCD_init();
 

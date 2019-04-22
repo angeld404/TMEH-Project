@@ -14,7 +14,7 @@
 #define PW_CLEARED      (0xFF)
 #define DEFAULT_PIN     (1234)
 
-#define LOCKED          (1)
+#define LOCKED          (1) //Lock state values
 #define UNLOCKED        (2)
 #define SET_LOCK        (3)
 

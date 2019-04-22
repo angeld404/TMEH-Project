@@ -12,21 +12,21 @@
 #include "delay_us.h"
 
 void LCD_Instr(int Instruction) {           //executes LCD instructions
-    int Instruction1 = Instruction;
-    int Instruction0 = Instruction<<4;
-    P9->DIR |= LCD_DB_PORTS;
-    P10->DIR |= LCD_INSTR_PORTS;
-    P10->OUT &= ~LCD_INSTR_PORTS;        //set RS RW & E Low
-    P9->OUT = Instruction1;
+    int Instruction1 = Instruction; //Instruction upper 4 bits
+    int Instruction0 = Instruction<<4; //Instruction lower 4 bits
+    P9->DIR |= LCD_DB_PORTS; //Set data bits as outputs
+    P10->DIR |= LCD_INSTR_PORTS; //Set instruction pins as outputs
+    P10->OUT &= ~LCD_INSTR_PORTS; //set RS RW & E Low
+    P9->OUT = Instruction1; //Output message higher 4 bits
     P10->OUT |= (BIT2);     //E High
     delay_us(1);
     P10->OUT &= ~(BIT2);    //E Low
-    if (Instruction == LCD_INIT_SET) {
+    if (Instruction == LCD_INIT_SET) { //necessary init delay
         delay_us(400);
         return;
     }
     delay_us(1);
-    P9->OUT = (Instruction0);
+    P9->OUT = (Instruction0); //Output message lower 4 bits
     P10->OUT |= (BIT2);     //E High
     delay_us(1);
     P10->OUT &= ~(BIT2);    //E Low

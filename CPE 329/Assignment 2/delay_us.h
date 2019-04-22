@@ -12,6 +12,7 @@
 #ifndef DELAY_US_H
 #define DELAY_US_H_
 
-void delay_us(int time_us);
+void delay_us(int time_us); //Function Declarations
+
 
 #endif

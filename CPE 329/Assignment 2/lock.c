@@ -28,7 +28,7 @@ int Check_pound() {
 //FSM description of digital lock
 int Lock_fsm(int pw, int pw_key, int lockstate) {
 
-    if((pw == PW_CLEARED) || (pw_key == PW_CLEARED)) {
+    if((pw == PW_CLEARED) || (pw_key == PW_CLEARED)) { //stay in current stake if cleared
         return lockstate;
     }
     if(lockstate == LOCKED) {
@@ -89,7 +89,7 @@ int Lock_read_key() {
             return PW_CLEARED;
         }
 
-        switch(pw_pos) {
+        switch(pw_pos) { //Adjust bit place for entered key
             case 4:
                 pw = pw +  (entered_key * 1000);
                 break;
@@ -116,8 +116,8 @@ int Lock_read_key() {
 //interrupt triggered by keypad pins
 void PORT4_IRQHandler(void){
 
-    P4->OUT &= ~(COL1 | COL2 | COL3);
-    P4->IFG &= ~(ROW1|ROW2|ROW3|ROW4);
+    P4->OUT &= ~(COL1 | COL2 | COL3); //clear cols
+    P4->IFG &= ~(ROW1|ROW2|ROW3|ROW4); //clear int flag
 
 }   //end PORT4_IRQHandler()
 
