@@ -7,7 +7,7 @@
  *
  *  Project 1: Digital Lock
  *
- *  Default password is 7777
+ *  Default password is 1234
  */
 
 #include "msp.h"
