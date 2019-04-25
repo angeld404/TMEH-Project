@@ -17,6 +17,7 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./startup_msp432p401r_ccs.obj" \
 "./system_msp432p401r.obj" \
+"./timer_waves.obj" \
 "../msp432p401r.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -160,8 +161,8 @@ Assignment\ 2.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "LCD.obj" "delay_us.obj" "keypad.obj" "lock.obj" "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
-	-$(RM) "LCD.d" "delay_us.d" "keypad.d" "lock.d" "main.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
+	-$(RM) "LCD.obj" "delay_us.obj" "keypad.obj" "lock.obj" "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "timer_waves.obj" 
+	-$(RM) "LCD.d" "delay_us.d" "keypad.d" "lock.d" "main.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" "timer_waves.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

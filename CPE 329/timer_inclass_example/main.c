@@ -22,8 +22,8 @@ void main(void) {
 	GPIO_init();
 
 	//enable interrupts
-	NVIC->ISER[0] = 1 << (TA0_0_IRQn & 3);
-	NVIC->ISER[0] = 1 << (TA0_N_IRQn & 3);
+	NVIC->ISER[0] |= 1 << (TA0_0_IRQn & 31);
+	NVIC->ISER[0] |= 1 << (TA0_N_IRQn & 31);
 	__enable_irq();
 
 	//set TimerA0 to use ACLK in continuous mode

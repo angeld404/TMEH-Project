@@ -15,7 +15,8 @@ C_SRCS += \
 ../lock.c \
 ../main.c \
 ../startup_msp432p401r_ccs.c \
-../system_msp432p401r.c 
+../system_msp432p401r.c \
+../timer_waves.c 
 
 C_DEPS += \
 ./LCD.d \
@@ -24,7 +25,8 @@ C_DEPS += \
 ./lock.d \
 ./main.d \
 ./startup_msp432p401r_ccs.d \
-./system_msp432p401r.d 
+./system_msp432p401r.d \
+./timer_waves.d 
 
 OBJS += \
 ./LCD.obj \
@@ -33,7 +35,8 @@ OBJS += \
 ./lock.obj \
 ./main.obj \
 ./startup_msp432p401r_ccs.obj \
-./system_msp432p401r.obj 
+./system_msp432p401r.obj \
+./timer_waves.obj 
 
 OBJS__QUOTED += \
 "LCD.obj" \
@@ -42,7 +45,8 @@ OBJS__QUOTED += \
 "lock.obj" \
 "main.obj" \
 "startup_msp432p401r_ccs.obj" \
-"system_msp432p401r.obj" 
+"system_msp432p401r.obj" \
+"timer_waves.obj" 
 
 C_DEPS__QUOTED += \
 "LCD.d" \
@@ -51,7 +55,8 @@ C_DEPS__QUOTED += \
 "lock.d" \
 "main.d" \
 "startup_msp432p401r_ccs.d" \
-"system_msp432p401r.d" 
+"system_msp432p401r.d" \
+"timer_waves.d" 
 
 C_SRCS__QUOTED += \
 "../LCD.c" \
@@ -60,6 +65,7 @@ C_SRCS__QUOTED += \
 "../lock.c" \
 "../main.c" \
 "../startup_msp432p401r_ccs.c" \
-"../system_msp432p401r.c" 
+"../system_msp432p401r.c" \
+"../timer_waves.c" 
 
 

@@ -1,27 +1,28 @@
 /*
- *  timer.c
+ *  set_dco.h
  *
- *  TimerA example
- *
- *      -> timerA takes in clk input
- *      -> includes built-in clk divider
- *      -> roll-over flag RC triggers when counter rolls over
- *
- *      Mode Control (MC):
- *          > (00) Stop:        doesn't count
- *          > (01) Up:          count up to value stored in CCR0, resets to 0 when
- *                              CCR0, then keep counting. Triggers TAIFG flag on roll-over
- *          > (10) Continuous:  counts up to 0xFFFF, triggers TAIFG flag on roll-over
- *          > (11) Updown:      count up to CCR0, then count down to 0. Triggers TAIFG flag
- *                              on reaching 0x00
+ *  Created on: Apr 10, 2019
+ *  Author: Jonathan Lau, Angle Delgado
  */
 
 #include "msp.h"
-#include "timer.h"
 
-void CS_init(int Freq) {
+#define FREQ_1_5_MHZ    (BIT0)
+#define FREQ_3_MHZ      (BIT1)
+#define FREQ_6_MHZ      (BIT2)
+#define FREQ_12_MHZ     (BIT3)
+#define FREQ_24_MHZ     (BIT4)
+#define FREQ_48_MHZ     (BIT5)
+
+#define XOR_TOGGLE      (0xFF)
+
+void set_DCO(int Freq)
+{
     CS->KEY = CS_KEY_VAL;                   //unlock CS registers
+
     CS->CTL1 |= (BIT1 | BIT0);              //set DCO as MCLK source
+    CS->CTL1 |= (BIT5 | BIT4);              //set DCO as SMCLK source
+
     CS->CTL0 &= ~(CS_CTL0_DCORSEL_MASK);    //clear previous DCO frequency setting
 
     if (Freq == FREQ_1_5_MHZ)               //MCLK = 1.5 MHz
@@ -60,22 +61,6 @@ void CS_init(int Freq) {
 
     CS->KEY &= 0x0000;      // lock CS registers
 
-}
+}   //end set_DCO()
 
-void GPIO_init() {
 
-}
-
-void TA0_0_IRQHandler(void) {
-    TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);
-    TIMER_A0->CCR[0] += 16384;
-    P1->OUT ^= BIT0;
-}
-
-void TA0_N_IRQHandler(void) {
-    if(TIMER_A0->CCTL[1] & TIMER_A_CCTLN_CCIFG) {
-        TIMER_A0->CCTL[1] &= ~TIMER_A_CTLN_CCIFG;       //clear interrupt flag
-        TIMER_A0->CCR[1] += 16384;                      //add 0.5s timer
-        P2->OUT ^= BIT0;                                //toggle LED
-    }
-}

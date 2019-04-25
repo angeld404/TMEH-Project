@@ -1,5 +1,14 @@
+/*
+ *  set_dco.h
+ *
+ *  Created on: Apr 10, 2019
+ *  Author: Jonathan Lau, Angle Delgado
+ */
 
 #include "msp.h"
+
+#ifndef SET_DCO_H_
+#define SET_DCO_H_
 
 #define FREQ_1_5_MHZ    (BIT0)
 #define FREQ_3_MHZ      (BIT1)
@@ -10,17 +19,13 @@
 
 #define XOR_TOGGLE      (0xFF)
 
-/*
- *  delay_us.h
- *
- *  Created on: Apr 10, 2019
- *  Author: Jonathan Lau, Angle Delgado
- */
-
 void set_DCO(int Freq)
 {
     CS->KEY = CS_KEY_VAL;                   //unlock CS registers
+
     CS->CTL1 |= (BIT1 | BIT0);              //set DCO as MCLK source
+    CS->CTL1 |= (BIT5 | BIT4);              //set DCO as SMCLK source
+
     CS->CTL0 &= ~(CS_CTL0_DCORSEL_MASK);    //clear previous DCO frequency setting
 
     if (Freq == FREQ_1_5_MHZ)               //MCLK = 1.5 MHz
@@ -61,4 +66,4 @@ void set_DCO(int Freq)
 
 }   //end set_DCO()
 
-
+#endif
