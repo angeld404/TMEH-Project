@@ -2,19 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="TA0_0" key="selection"/>
+		<item value="Continuous" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ta0_0"/>
-			<item value="ta0_i"/>
-			<item value="ta0"/>
-			<item value="P7"/>
-			<item value="Instruction"/>
-			<item value="Message"/>
-			<item value="FF"/>
+			<item value="continuous"/>
+			<item value="irqn"/>
+			<item value="TIMER_A_CTL_IE"/>
+			<item value="TIMER_A_CCTLN_COV"/>
+			<item value="TIMER_A_CTLN_CCIFG"/>
+			<item value="overflow"/>
+			<item value="overflow interrupt"/>
+			<item value="TIMER_A_CCTL_CCIFG"/>
+			<item value="TIMER_A_CCTLN_CCIFG"/>
+			<item value="TIMER_A_CC"/>
+			<item value="TA0_0_"/>
+			<item value="TIMER_A_CTL_TASSEL_1"/>
+			<item value="TIMER_A_CCTL"/>
+			<item value="TA0_0_IRQn"/>
+			<item value="smclk"/>
 		</list>
 		<list key="replacehistory">
 			<item value="P4"/>
@@ -25,8 +33,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="385" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="523" key="DIALOG_HEIGHT"/>
-		<item value="1193" key="DIALOG_X_ORIGIN"/>
-		<item value="204" key="DIALOG_Y_ORIGIN"/>
+		<item value="529" key="DIALOG_HEIGHT"/>
+		<item value="757" key="DIALOG_X_ORIGIN"/>
+		<item value="313" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
