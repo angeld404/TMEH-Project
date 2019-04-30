@@ -22,6 +22,6 @@ void SPI_init() {
     P1->SEL1 &= ~(BIT5 | BIT6);
     P3->DIR |= (BIT6);             // CS chip select
 
-    EUSCI_B0->CTLW0 |= EUSCI_B_CTLW0_SWRST;
+    EUSCI_B0->CTLW0 &= ~EUSCI_B_CTLW0_SWRST;
     // end SPI and ports initialization
 }

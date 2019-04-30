@@ -9,6 +9,7 @@ CMD_SRCS += \
 ../msp432p401r.cmd 
 
 C_SRCS += \
+../DAC.c \
 ../LCD.c \
 ../delay_us.c \
 ../keypad.c \
@@ -18,9 +19,11 @@ C_SRCS += \
 ../spi.c \
 ../startup_msp432p401r_ccs.c \
 ../system_msp432p401r.c \
+../timer.c \
 ../timer_waves.c 
 
 C_DEPS += \
+./DAC.d \
 ./LCD.d \
 ./delay_us.d \
 ./keypad.d \
@@ -30,9 +33,11 @@ C_DEPS += \
 ./spi.d \
 ./startup_msp432p401r_ccs.d \
 ./system_msp432p401r.d \
+./timer.d \
 ./timer_waves.d 
 
 OBJS += \
+./DAC.obj \
 ./LCD.obj \
 ./delay_us.obj \
 ./keypad.obj \
@@ -42,9 +47,11 @@ OBJS += \
 ./spi.obj \
 ./startup_msp432p401r_ccs.obj \
 ./system_msp432p401r.obj \
+./timer.obj \
 ./timer_waves.obj 
 
 OBJS__QUOTED += \
+"DAC.obj" \
 "LCD.obj" \
 "delay_us.obj" \
 "keypad.obj" \
@@ -54,9 +61,11 @@ OBJS__QUOTED += \
 "spi.obj" \
 "startup_msp432p401r_ccs.obj" \
 "system_msp432p401r.obj" \
+"timer.obj" \
 "timer_waves.obj" 
 
 C_DEPS__QUOTED += \
+"DAC.d" \
 "LCD.d" \
 "delay_us.d" \
 "keypad.d" \
@@ -66,9 +75,11 @@ C_DEPS__QUOTED += \
 "spi.d" \
 "startup_msp432p401r_ccs.d" \
 "system_msp432p401r.d" \
+"timer.d" \
 "timer_waves.d" 
 
 C_SRCS__QUOTED += \
+"../DAC.c" \
 "../LCD.c" \
 "../delay_us.c" \
 "../keypad.c" \
@@ -78,6 +89,7 @@ C_SRCS__QUOTED += \
 "../spi.c" \
 "../startup_msp432p401r_ccs.c" \
 "../system_msp432p401r.c" \
+"../timer.c" \
 "../timer_waves.c" 
 
 

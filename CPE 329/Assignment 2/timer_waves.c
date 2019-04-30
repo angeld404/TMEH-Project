@@ -13,7 +13,7 @@ void Part_A_init() {
     P6->OUT |= BIT4;       // P6.4 initially on
 
     //set MCLK and SMCLK to DCO at nominal 24 MHz
-    set_DCO(FREQ_24_MHZ);
+    //set_DCO(FREQ_24_MHZ);
 
     //set TimerA0 to use SMCLK in UP mode
     TIMER_A0->CTL |= (TIMER_A_CTL_SSEL__SMCLK | TIMER_A_CTL_MC__UP);
