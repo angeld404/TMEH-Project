@@ -17,7 +17,9 @@ main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/core_
 main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 main.obj: C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/system_msp432p401r.h
-main.obj: ../timer_waves.h
+main.obj: ../spi.h
+main.obj: ../set_dco.h
+main.obj: ../delay_us.h
 
 ../main.c: 
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/msp.h: 
@@ -36,4 +38,6 @@ C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/core_cm4.h:
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h: 
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/Users/jonat/OneDrive/Documents/ccs/ccs_base/arm/include/system_msp432p401r.h: 
-../timer_waves.h: 
+../spi.h: 
+../set_dco.h: 
+../delay_us.h: 

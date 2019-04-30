@@ -44,7 +44,7 @@ void main(void) {
 
     EUSCI_B0->CTLW0 &= ~EUSCI_B_CTLW0_SWRST;    //clear reset to activate peripheral
 
-    EUSCI_B0->IE |= EUSCI_B_IE_RXIE;    //set interrupt
+    EUSCI_B0->IE |= EUSCI_B_IE_RXIE;    //set interrupt en
 
     //set interrupt
     NVIC->ISER[0] = (1 << (EUSCIB0_IRQn & 31));

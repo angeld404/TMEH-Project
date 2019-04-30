@@ -7,7 +7,7 @@
 #include "msp.h"
 #include <math.h>
 
-typedef int8_t var_type;
+typedef int32_t var_type;
 var_type TestFunction(var_type num);
 
 int main(void) {
@@ -38,7 +38,7 @@ var_type TestFunction(var_type num) {
      var_type testVar;
      P3->OUT |= BIT0; // turn RED LED on
 
-     testVar = num / 3;
+     testVar = sin(num);
 
      P3->OUT &= ~BIT0; // turn RED LED off
      return testVar;

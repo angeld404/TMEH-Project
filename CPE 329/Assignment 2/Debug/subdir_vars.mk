@@ -14,6 +14,8 @@ C_SRCS += \
 ../keypad.c \
 ../lock.c \
 ../main.c \
+../set_dco.c \
+../spi.c \
 ../startup_msp432p401r_ccs.c \
 ../system_msp432p401r.c \
 ../timer_waves.c 
@@ -24,6 +26,8 @@ C_DEPS += \
 ./keypad.d \
 ./lock.d \
 ./main.d \
+./set_dco.d \
+./spi.d \
 ./startup_msp432p401r_ccs.d \
 ./system_msp432p401r.d \
 ./timer_waves.d 
@@ -34,6 +38,8 @@ OBJS += \
 ./keypad.obj \
 ./lock.obj \
 ./main.obj \
+./set_dco.obj \
+./spi.obj \
 ./startup_msp432p401r_ccs.obj \
 ./system_msp432p401r.obj \
 ./timer_waves.obj 
@@ -44,6 +50,8 @@ OBJS__QUOTED += \
 "keypad.obj" \
 "lock.obj" \
 "main.obj" \
+"set_dco.obj" \
+"spi.obj" \
 "startup_msp432p401r_ccs.obj" \
 "system_msp432p401r.obj" \
 "timer_waves.obj" 
@@ -54,6 +62,8 @@ C_DEPS__QUOTED += \
 "keypad.d" \
 "lock.d" \
 "main.d" \
+"set_dco.d" \
+"spi.d" \
 "startup_msp432p401r_ccs.d" \
 "system_msp432p401r.d" \
 "timer_waves.d" 
@@ -64,6 +74,8 @@ C_SRCS__QUOTED += \
 "../keypad.c" \
 "../lock.c" \
 "../main.c" \
+"../set_dco.c" \
+"../spi.c" \
 "../startup_msp432p401r_ccs.c" \
 "../system_msp432p401r.c" \
 "../timer_waves.c" 
