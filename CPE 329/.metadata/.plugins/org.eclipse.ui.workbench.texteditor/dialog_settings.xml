@@ -2,29 +2,31 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Continuous" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="WAVE_RES" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="120"/>
+			<item value="wave_res"/>
+			<item value="TIMER_A_CTL_SSEL__SMCLK"/>
+			<item value="EUSCI_B_CTLW0_UCSSEL_2"/>
+			<item value="Freq"/>
+			<item value="dco"/>
+			<item value="outmod"/>
+			<item value="SMCLK"/>
+			<item value="CS"/>
+			<item value="DIV"/>
+			<item value="EUSCI_B_CTLW0"/>
+			<item value="EUSCI_B_CTLW"/>
 			<item value="continuous"/>
 			<item value="irqn"/>
 			<item value="TIMER_A_CTL_IE"/>
-			<item value="TIMER_A_CCTLN_COV"/>
-			<item value="TIMER_A_CTLN_CCIFG"/>
-			<item value="overflow"/>
-			<item value="overflow interrupt"/>
-			<item value="TIMER_A_CCTL_CCIFG"/>
-			<item value="TIMER_A_CCTLN_CCIFG"/>
-			<item value="TIMER_A_CC"/>
-			<item value="TA0_0_"/>
-			<item value="TIMER_A_CTL_TASSEL_1"/>
-			<item value="TIMER_A_CCTL"/>
-			<item value="TA0_0_IRQn"/>
-			<item value="smclk"/>
 		</list>
 		<list key="replacehistory">
+			<item value="WAVE_RES"/>
+			<item value="freq"/>
 			<item value="P4"/>
 			<item value="Message"/>
 			<item value="Instruction"/>
@@ -34,7 +36,7 @@
 		<item value="385" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="529" key="DIALOG_HEIGHT"/>
-		<item value="757" key="DIALOG_X_ORIGIN"/>
-		<item value="313" key="DIALOG_Y_ORIGIN"/>
+		<item value="1105" key="DIALOG_X_ORIGIN"/>
+		<item value="327" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

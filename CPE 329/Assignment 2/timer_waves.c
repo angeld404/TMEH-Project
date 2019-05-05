@@ -111,32 +111,5 @@ void Part_E_init() {
     TIMER_A0->CCR[1] = 750;
 }
 
-void TA0_0_IRQHandler(void) {
-
-    //P6->OUT |= BIT0;        //start timing ISR execution
-
-    TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
-
-    //P8->OUT ^= BIT5;
-    //P8->OUT ^= BIT6;
-    //P6->OUT ^= BIT4;
-
-    //P6->OUT &= ~BIT0;       //stop timing ISR execution
-}   //end TA0_0_IRQHandler()
-
-
-void TA0_N_IRQHandler(void) {
-    // CCR[0] = 115 for LED blink
-    TIMER_A0->CCTL[1] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
-    TIMER_A0->CCR[1] += 230;
-    if(TIMER_A0->CCR[1] == 230) {
-        P6->OUT ^= BIT0;
-    }
-
-    //P8->OUT ^= BIT6;
-
-}   //end TA0_N_IRQHandler()
-
-
 
 
