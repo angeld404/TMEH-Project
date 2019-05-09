@@ -34,6 +34,8 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\common_libraries"/>
+			<item value="C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\uart_inclass_example"/>
+			<item value="C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\uart_inclass_example_temp"/>
 			<item value="C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\Assignment 2"/>
 		</list>
 	</section>

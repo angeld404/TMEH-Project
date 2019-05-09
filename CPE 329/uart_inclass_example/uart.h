@@ -12,5 +12,10 @@
 
 void UART_init();
 
+void UART_tx_char(char a);
+
+void UART_tx_string(char *phrase);
+
+void UART_rx_echo(char a);
 
 #endif /* UART_H_ */

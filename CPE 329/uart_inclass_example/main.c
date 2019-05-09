@@ -25,8 +25,7 @@
 #include "msp.h"
 #include <string.h>
 #include "set_dco.h"
-#include "delay_us.h"
-#include "LCD.h"
+//#include "delay_us.h"
 #include "uart.h"
 
 void main(void) {
@@ -37,5 +36,15 @@ void main(void) {
      set_DCO(FREQ_3_MHZ);
 
      //initialize UART
+     UART_init();
 
+     while(1) {
+         //UART_tx_string("RECEIVED: ");
+     }
+}
+
+void EUSCI_A0_IRQHandler(void) {
+    volatile char got = EUSCI_A0->RXBUF;
+    UART_rx_echo(got);
+    EUSCI_A0->IFG &= ~EUSCI_A_IFG_RXIFG;
 }
