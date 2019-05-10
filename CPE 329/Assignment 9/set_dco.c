@@ -9,6 +9,10 @@
 void set_DCO(int freq) {
     CS->KEY = CS_KEY_VAL;                   //unlock CS registers
 
+    CS->CTL1 |= CS_CTL1_SELM_3;                //set MCLK as DCO
+    CS->CTL2 |= CS_CTL2_HFXTFREQ_6 | CS_CTL2_HFXT_EN | CS_CTL2_HFXTDRIVE;
+    CS->CTL1 |= 0x30;                //set HSMCLK as HFXT
+
     CS->CTL0 &= ~(CS_CTL0_DCORSEL_MASK);    //clear previous DCO frequency setting
 
     if (freq == FREQ_1_5_MHZ)               //DCO = 1.5 MHz
