@@ -2,12 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="WAVE_RES" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="UCTXIFG" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="UCTXIFG"/>
+			<item value="ucifg"/>
+			<item value="EUSCIA0"/>
+			<item value="EUSCIA0_IRQn"/>
+			<item value="handler"/>
+			<item value="IRQnHandler"/>
+			<item value="EUSCI_A_MCTLW"/>
+			<item value="EUSCI"/>
 			<item value="120"/>
 			<item value="wave_res"/>
 			<item value="TIMER_A_CTL_SSEL__SMCLK"/>
@@ -15,14 +23,6 @@
 			<item value="Freq"/>
 			<item value="dco"/>
 			<item value="outmod"/>
-			<item value="SMCLK"/>
-			<item value="CS"/>
-			<item value="DIV"/>
-			<item value="EUSCI_B_CTLW0"/>
-			<item value="EUSCI_B_CTLW"/>
-			<item value="continuous"/>
-			<item value="irqn"/>
-			<item value="TIMER_A_CTL_IE"/>
 		</list>
 		<list key="replacehistory">
 			<item value="WAVE_RES"/>
