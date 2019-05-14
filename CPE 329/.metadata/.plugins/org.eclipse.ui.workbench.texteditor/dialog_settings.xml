@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="UCTXIFG" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="NVIC_IPR" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="UCTXIFG"/>
-			<item value="ucifg"/>
-			<item value="EUSCIA0"/>
-			<item value="EUSCIA0_IRQn"/>
-			<item value="handler"/>
-			<item value="IRQnHandler"/>
-			<item value="EUSCI_A_MCTLW"/>
-			<item value="EUSCI"/>
-			<item value="120"/>
-			<item value="wave_res"/>
-			<item value="TIMER_A_CTL_SSEL__SMCLK"/>
-			<item value="EUSCI_B_CTLW0_UCSSEL_2"/>
-			<item value="Freq"/>
-			<item value="dco"/>
-			<item value="outmod"/>
+			<item value="NVIC_IPR"/>
+			<item value="IR"/>
+			<item value="IRQ"/>
+			<item value="INTERRUPT"/>
+			<item value="IRQ_EN"/>
+			<item value="ENABLE"/>
+			<item value="enable"/>
+			<item value="irq_enable"/>
+			<item value="enable_irq"/>
+			<item value="Enable"/>
+			<item value="ADC14_ifgr"/>
+			<item value="ADC14_IRQn"/>
+			<item value="ADC14_IFG"/>
+			<item value="itoa"/>
+			<item value="atoi"/>
 		</list>
 		<list key="replacehistory">
 			<item value="WAVE_RES"/>

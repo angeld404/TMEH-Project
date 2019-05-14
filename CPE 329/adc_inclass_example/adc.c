@@ -30,7 +30,7 @@ void ADC14_init() {
 
     //enable interrupt
     ADC14->IER0 |= ADC14_IER0_IE17;     //enable interrupt on channel 17
-    NVIC->ISER[0] = (1 << ADC14_IRQn & 31);
+    NVIC->ISER[0] |= (1 << ADC14_IRQn & 31);
 
 }
 

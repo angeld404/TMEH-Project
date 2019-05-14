@@ -7,7 +7,6 @@
 #include "adc.h"
 
 void ADC14_init() {
-
     //select ADC0 port
     P5->SEL0 |= BIT5;
     P5->SEL1 |= BIT5;
@@ -25,10 +24,16 @@ void ADC14_init() {
 
     ADC14->MCTL[17] = ADC14_MCTLN_INCH_0;       //read from channel A0 for conversion
 
+    //enable interrupt
+    ADC14->IER0 |= ADC14_IER0_IE17;             //enable interrupt on channel 17
+    NVIC->ISER[0] |= (1 << ADC14_IRQn & 31);
+
     //enable conversion_enable bit, end configuration
     ADC14->CTL0 |= ADC14_CTL0_ENC;
 
 
-}
+
+
+}   //end ADC14_init()
 
 
