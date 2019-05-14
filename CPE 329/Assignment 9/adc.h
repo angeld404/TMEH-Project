@@ -9,5 +9,6 @@
 
 void ADC14_init();
 
+void ADC14_IRQHandler(void);
 
 #endif /* ADC_H_ */

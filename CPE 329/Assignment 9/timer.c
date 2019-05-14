@@ -31,18 +31,7 @@ void Timer_A_init(int clk, int mc, int IE, int outmod){
     TIMER_A0->CTL |= (clk | mc);
     TIMER_A0->CCTL[0] |= (IE | outmod);
 
-
+    NVIC->ISER[0] |= 1 << (TA0_0_IRQn & 31);
 
 }
-
-void TA0_0_IRQHandler(void) {
-
-    TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
-
-}   //end TA0_0_IRQHandler()
-
-void TA0_N_IRQHandler(void) {
-    // not used here
-}   //end TA0_N_IRQHandler()
-
 

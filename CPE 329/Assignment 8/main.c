@@ -17,7 +17,7 @@
 
 uint16_t enter_flg = 0;     // global enter flag
 
-void main(void) {
+     void main(void) {
      //stop watchdog timer
      WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;
 
@@ -51,11 +51,14 @@ void main(void) {
              for(i = i; i >= 0; i--) {
                  dac_out += num[i]*pow(10,i_max-i);
              }
+             /*
              if((dac_out >= 0) & (dac_out <= 4095)) {
                  SPI_TX(dac_out);   // output dac value
              } else {
                  SPI_TX(4095);      // dac output caps at 4095
              }
+             */
+             UART_tx_string("RECEIVED");
              dac_out = 0;
              for(i = 0; i < 10; i++) num[i] = 0;
              enter_flg = 0;         // reset enter flag
