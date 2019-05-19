@@ -4,6 +4,15 @@
 		<item value="D:\Documents\Github\Repositories\TMEH-Project\CPE 329\Assignment 2"/>
 		<item value="C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\Assignment 2"/>
 	</list>
+	<section name="CleanDialogSettings">
+		<item value="828" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="595" key="DIALOG_HEIGHT"/>
+		<item value="546" key="DIALOG_X_ORIGIN"/>
+		<item value="144" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
 	<section name="NewWizardAction">
 		<item value="com.ti.ccstudio.project.ui.wizards.project.NewCCSProjectWizard_2" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">

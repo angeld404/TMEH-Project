@@ -60,7 +60,8 @@ void main(void) {
 void ADC14_IRQHandler(void) {
     volatile uint16_t analogValue = ADC14->MEM[17];
     ADC14->CLRIFGR0 &= ~ADC14_CLRIFGR0_CLRIFG17;
-    printf("%d", analogValue);
+    //printf("%d", analogValue);
+    __delay_cycles(2);
 }
 
 /*void TA0_0_IRQHandler(void) {
