@@ -24,8 +24,6 @@ int analogValue = 0;
 int adc_int = 0;
 char adc_char[14];
 
-int enter_flg = 0;
-
 void main(void) {
     //stop watchdog timer
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;
@@ -66,11 +64,6 @@ void ADC14_IRQHandler(void) {
     __delay_cycles(2);
 }
 
-void EUSCI_A0_IRQHandler(void) {
-    if(EUSCI_A0->IFG & EUSCI_A_IFG_RXIFG){
-        if(EUSCI_A0->RXBUF == 0xD) enter_flg = 1;
-    }
-}
 /*void TA0_0_IRQHandler(void) {
 
     TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
