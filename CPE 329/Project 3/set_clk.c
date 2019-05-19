@@ -81,10 +81,8 @@ void set_HFXT() {
     /* Select MCLK & HSMCLK = HFXT, no divider */
     CS->CTL1 = CS->CTL1
              & ~(CS_CTL1_SELM_MASK | CS_CTL1_DIVM_MASK | CS_CTL1_SELS_MASK | CS_CTL1_DIVHS_MASK)
-             | CS_CTL1_SELM__HFXTCLK | CS_CTL1_SELS__HFXTCLK | CS_CTL1_DIVS__2;
+             | CS_CTL1_SELM__HFXTCLK | CS_CTL1_SELS__HFXTCLK | CS_CTL1_DIVS__2 | CS_CTL1_DIVHS__2;
 
-    //CS->CTL1 |= CS_CTL1_DIVS__128;
-    //CS->CTL1 |= CS_CTL1_DIVHS__128;
 
     CS->KEY = 0; // Lock CS module from unintended access
 
