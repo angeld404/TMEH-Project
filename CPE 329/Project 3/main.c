@@ -9,8 +9,33 @@
 #include "uart.h"
 #include "adc.h"
 #include "timer.h"
+#include "multimeter.h"
 
-uint32_t freq_val = 0;
+uint32_t ta0_val = 0;
+uint32_t freq_ccr = 0;
+uint32_t sample_ccr = 0;
+uint32_t ta2_ov = 0;
+uint32_t ta2_ov_cnt = 0;
+
+int wave[120];
+int wave_table[120];
+uint32_t sample_n = 0;
+
+int per_flg = 0;
+
+int freq_string[6];
+int wave_string[6];
+int vpp_string[6];
+int rms_string[6];
+int dc_string[6];
+int graph_div_string[6];
+
+char freq_chars[6];
+char wave_chars[6];
+char vpp_chars[6];
+char rms_chars[6];
+char dc_chars[6];
+char graph_div_chars[6];
 
 
 void main(void) {
@@ -18,9 +43,9 @@ void main(void) {
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;
 
 	//initialize CLKs
-	//MCLK => DCO, 24 MHz
+	//MCLK => DCO, 48 MHz
 	//SMCLK => HFXT, 24 MHz
-	//HSMCLK => HFXT, 48 MHz
+	//HSMCLK => HFXT, 24 MHz
 	set_HFXT();
 
 	//MCLK PORT
@@ -47,7 +72,6 @@ void main(void) {
 	//initialize Timer_A0
 	TIMER_A0->CTL = TIMER_A_CTL_SSEL__SMCLK         //select SMCLK source
 	              | TIMER_A_CTL_MC__CONTINUOUS      //continuous mode
-	              | TIMER_A_CTL_ID__2               //input clk div 8
 	              | TIMER_A_CTL_IE;                 //enable Timer_A0 interrupt
 	TIMER_A0->CCTL[0] = TIMER_A_CCTLN_CAP           //Timer_A0 in capture mode
 	                  | TIMER_A_CCTLN_CCIS__CCIA    //capture inputs on CCI0A
@@ -70,7 +94,7 @@ void main(void) {
                       | TIMER_A_CCTLN_CCIE          //enable capture interrupt
                       | TIMER_A_CCTLN_SCS           //synchronize capture source to clk
                       | TIMER_A_CCTLN_SCCI;         //synchronize capture input to clk
-	TIMER_A2->CCR[1] = 300;
+	TIMER_A2->CCR[0] = 200;
 	NVIC->ISER[0] |= 1 << (TA2_0_IRQn & 31);        //interrupt registers for timers
     NVIC->ISER[0] |= 1 << (TA2_N_IRQn & 31);
 
@@ -80,54 +104,113 @@ void main(void) {
 	//enable interrupts
 	__enable_irq();
 
+	int freq, vpp, rms, dc;
+	int graph_div;
+
+	//clear terminal screen
+	UART_tx_char(0x1b);
+    UART_tx_string("[2J");
+    UART_tx_char(0x1b);
+    UART_tx_string("[H");
+
+	DMM_draw_xaxis();
 
 	while(1) {
+	    //get input wave frequency
+	    freq = DMM_TA0_FREQ / (freq_ccr);
+	    vpp = Get_Vpp(wave);
+	    rms = Get_RMS(wave);
+	    dc = Get_DC(wave);
+	    graph_div = 400000 / freq;
+
+	    Get_freq_string(freq, freq_string, freq_chars);
+	    Get_freq_string(vpp, vpp_string, vpp_chars);
+	    Get_freq_string(rms, rms_string, rms_chars);
+	    Get_freq_string(dc, dc_string, dc_chars);
+	    Get_freq_string(graph_div, graph_div_string, graph_div_chars);
+
+	    //calculate and update sampling time
+        sample_ccr = freq_ccr / 240 + 1;
+        ta2_ov = 0;
+        while(sample_ccr > 0xFFFF) {
+            sample_ccr -= 0xFFFF;
+            ta2_ov++;
+        }
+        TIMER_A2->CCR[0] = sample_ccr;
+
+        //calculate DC voltage
+
+        //print waveform in terminal
+        DMM_graph(wave_table);
+        DMM_draw_info(freq_chars, vpp_chars, rms_chars, dc_chars, graph_div_chars);
+
+        //one period has passed
+        if(per_flg) {
+            per_flg = 0;
+        }
+
+
+
+        //PRINT FREQUENCY
+        /*
+        Get_freq_string(freq, freq_string, freq_chars);
+        UART_tx_string("FREQUENCY: ");
+        UART_tx_string(freq_chars);
+        UART_tx_string(" Hz\r\n");
+        */
+
 
 	}
 
 }   //end main()
 
-
-
-void EUSCIA0_IRQHandler(void) {
-    if(EUSCI_A0->IFG & EUSCI_A_IFG_RXIFG) {
+void ADC14_IRQHandler(void) {
+    if(sample_n > (DMM_SAMPLE_N-1)) {
+        sample_n = 0;
 
     }
-}   //end EUSCIA0_IRQHandler()
-
-void ADC14_IRQHandler(void) {
-    volatile uint16_t analogValue;
-    analogValue= ADC14->MEM[0];
+    wave[sample_n] = ADC14->MEM[0] * 33000 / 16383;
+    wave_table[sample_n] = wave[sample_n] / 1000;
+    sample_n++;
 }   //end ADC14_IRQHandler()
 
 void TA0_0_IRQHandler(void) {
     TIMER_A0->R = 0;                                 //reset timer
     TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
-    freq_val += (TIMER_A0->CCR[0]);
-    overflow = 0;
+    per_flg++;
+
+
+    ta0_val += (TIMER_A0->CCR[0]);
+    freq_ccr = ta0_val;
+    ta0_val = 0;
 
     P8->OUT ^= BIT6;
 
-}   //end TIMER_A_0_IRQHandler()
+}   //end TA0_0_IRQHandler()
 
 void TA0_N_IRQHandler(void) {
     TIMER_A0->CTL &= (~TIMER_A_CTL_IFG);     //clear interrupt flag
 
-    freq_val += 0xFFFF;
+    ta0_val += 0xFFFF;
 
-}   //end TIMER_A_N_IRQHandler()
+}   //end TA0_N_IRQHandler()
 
 void TA2_0_IRQHandler(void) {
-    TIMER_A0->R = 0;                                 //reset timer
-    TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
+    TIMER_A2->R = 0;                                 //reset timer
+    TIMER_A2->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
+    if(ta2_ov_cnt == ta2_ov) {
+        ta2_ov_cnt = 0;
 
+        ADC14->CTL0 |= ADC14_CTL0_SC;   //start a conversion
+    }
 
-}
+}   //end TA2_0_IRQHandler()
 
 void TA2_N_IRQHandler(void) {
-    TIMER_A0->CTL &= (~TIMER_A_CTL_IFG);     //clear interrupt flag
+    TIMER_A2->CTL &= (~TIMER_A_CTL_IFG);     //clear interrupt flag
 
+    ta2_ov_cnt++;
 
-}
+}   //end TA2_N_IRQHandler()

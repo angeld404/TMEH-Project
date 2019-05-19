@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="TIMER_A_CCTLN_CAP" key="selection"/>
+		<item value="ADC14_CTL0_SHT1_0" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ADC14_CTL0_SHT1_0"/>
+			<item value="TIMER_A_EX0_"/>
 			<item value="TIMER_A_CCTLN_CAP"/>
 			<item value="TIMER_A_CCTL_CAP"/>
 			<item value="TIMER_A_CCTL"/>
@@ -21,8 +23,6 @@
 			<item value="EUSCI_A_CTLW0_UCSSEL"/>
 			<item value="CS_CTL1"/>
 			<item value="ifg17"/>
-			<item value="ADC14_CLRIFGR"/>
-			<item value="CLRIFG0"/>
 		</list>
 		<list key="replacehistory">
 			<item value="WAVE_RES"/>

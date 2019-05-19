@@ -18,7 +18,7 @@ void ADC14_init() {
 
     ADC14->CTL0 = ( ADC14_CTL0_SHP              //pulse mode, use internal sample timer
                   | ADC14_CTL0_SSEL__HSMCLK     //use HSMCLK
-                  | ADC14_CTL0_SHT1_0           //sample for 4 clocks on memory location 0
+                  | ADC14_CTL0_SHT1__128        //sample for 4 clocks on memory location 0
                   | ADC14_CTL0_SHT0_0
                   | ADC14_CTL0_ON );            //turn ADC14 on (on/off option exists for power consumption purposes)
 

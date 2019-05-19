@@ -5,7 +5,7 @@
    <string>defaultSolution</string>
    <void method="set">
     <object idref="SolutionManager$PersistState0"/>
-    <string>C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558145776048\null</string>
+    <string>C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558229472800\null</string>
    </void>
   </void>
  </object>
@@ -17,7 +17,10 @@
    <string>C:\Users\jonat\OneDrive\Documents\ccs\ccs_base\dvt_4.1.0.201902061603\CodeGen\solutions\CodeGenCoverage</string>
   </void>
   <void method="add">
-   <string>C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558145776048\null</string>
+   <string>C:\Users\jonat\OneDrive\Documents\ccs\ccs_base\dvt_4.1.0.201902061603\CCSgraphs\solutions\SingleTime\singletime</string>
+  </void>
+  <void method="add">
+   <string>C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558229472800\null</string>
   </void>
  </void>
 </void>

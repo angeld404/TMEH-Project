@@ -18,8 +18,8 @@ void UART_init() {
                     | EUSCI_A_CTLW0_SWRST);          // keep in reset
 
     //from baud rate calculation
-    EUSCI_A0->BRW = 156;
-    EUSCI_A0->MCTLW =  (0 << EUSCI_A_MCTLW_BRS_OFS) | (4 << EUSCI_A_MCTLW_BRF_OFS) | EUSCI_A_MCTLW_OS16;
+    EUSCI_A0->BRW = 13;
+    EUSCI_A0->MCTLW =  (0x25 << EUSCI_A_MCTLW_BRS_OFS) | (0 << EUSCI_A_MCTLW_BRF_OFS) | EUSCI_A_MCTLW_OS16;
 
     //configure TX RX pins
     P1->SEL0 |= (BIT2|BIT3);
@@ -29,7 +29,7 @@ void UART_init() {
 
     //interrupt enables
     EUSCI_A0->IE &= ~EUSCI_A_IE_TXIE;
-    EUSCI_A0->IE |= EUSCI_A_IE_RXIE;
+    EUSCI_A0->IE &= ~EUSCI_A_IE_RXIE;
     NVIC->ISER[0] |= 1 << (EUSCIA0_IRQn & 31);
 
 }
