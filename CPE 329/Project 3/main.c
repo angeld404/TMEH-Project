@@ -21,6 +21,7 @@ int wave[120];
 int wave_table[120];
 uint32_t sample_n = 0;
 
+int freq = 1000;
 int per_flg = 0;
 int trigger_flg = 0;
 
@@ -39,7 +40,7 @@ char dc_chars[6];
 char graph_div_chars[6];
 
 
-void main(void) {
+    void main(void) {
     // stop watchdog timer
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;
 
@@ -76,7 +77,7 @@ void main(void) {
 	              | TIMER_A_CTL_IE;                 //enable Timer_A0 interrupt
 	TIMER_A0->CCTL[0] = TIMER_A_CCTLN_CAP           //Timer_A0 in capture mode
 	                  | TIMER_A_CCTLN_CCIS__CCIA    //capture inputs on CCI0A
-	                  | TIMER_A_CCTLN_CM__FALLING    //capture on rising edge
+	                  | TIMER_A_CCTLN_CM__RISING    //capture on rising edge
 	                  | TIMER_A_CCTLN_OUTMOD_4      //out mode set/reset
 	                  | TIMER_A_CCTLN_CCIE          //enable capture interrupt
 	                  | TIMER_A_CCTLN_SCS
@@ -105,7 +106,7 @@ void main(void) {
 	//enable interrupts
 	__enable_irq();
 
-	int freq, vpp, rms, dc;
+	int vpp, rms, dc;
 	int graph_div;
 
 	//clear terminal screen
@@ -114,21 +115,10 @@ void main(void) {
     UART_tx_char(0x1b);
     UART_tx_string("[H");
 
-	DMM_draw_xaxis();
 
 	while(1) {
 	    //get input wave frequency
-	    freq = DMM_TA0_FREQ / (freq_ccr);
-	    vpp = Get_Vpp(wave);
-	    rms = Get_RMS(wave);
-	    dc = Get_DC(wave);
-	    graph_div = 400000 / freq;
-
-	    Get_freq_string(freq, freq_string, freq_chars);
-	    Get_freq_string(vpp, vpp_string, vpp_chars);
-	    Get_freq_string(rms, rms_string, rms_chars);
-	    Get_freq_string(dc, dc_string, dc_chars);
-	    Get_freq_string(graph_div, graph_div_string, graph_div_chars);
+        freq = DMM_TA0_FREQ / (freq_ccr);
 
 	    //calculate and update sampling time
         sample_ccr = freq_ccr / 240 + 1;
@@ -137,34 +127,66 @@ void main(void) {
             sample_ccr -= 0xFFFF;
             ta2_ov++;
         }
+        if((sample_ccr < 90) & (ta2_ov == 0)) sample_ccr = 90;
+        if(freq_ccr >= 2996500) {
+            ta2_ov = 3;
+            sample_ccr = 3395;
+            trigger_flg = 1;
+        }
         TIMER_A2->CCR[0] = sample_ccr;
 
-        //calculate DC voltage
+        vpp = Get_Vpp(wave);
+        rms = Get_RMS(wave);
+        dc = Get_DC(wave);
+        graph_div = 400000 / freq;
+
+
+
+
+	    Get_freq_string(freq, freq_string, freq_chars);
+        Get_freq_string(vpp, vpp_string, vpp_chars);
+        Get_freq_string(rms, rms_string, rms_chars);
+        Get_freq_string(dc, dc_string, dc_chars);
+        Get_freq_string(graph_div, graph_div_string, graph_div_chars);
 
         //print waveform in terminal
+        UART_tx_char(0x1b);
+        UART_tx_string("[H");
+
+        DMM_draw_xaxis();
         DMM_graph(wave_table);
         DMM_draw_info(freq_chars, vpp_chars, rms_chars, dc_chars, graph_div_chars);
+        DMM_RMS_graph(rms);
+        DMM_VDC_graph(dc);
+
 
 	}
 
 }   //end main()
 
 void ADC14_IRQHandler(void) {
+    ADC14->CLRIFGR0 |= ADC14_CLRIFGR0_CLRIFG0;
+
     if(trigger_flg) {
         wave[sample_n] = ADC14->MEM[0] * 33000 / 16383;
         wave_table[sample_n] = wave[sample_n] / 1000;
-        sample_n++;
-        if(sample_n == DMM_SAMPLE_N) trigger_flg = 0;
+
+        if(sample_n >= DMM_SAMPLE_N-1){
+            trigger_flg = 0;
+            sample_n = 0;
+        }
     }
+
 }   //end ADC14_IRQHandler()
 
 void TA0_0_IRQHandler(void) {
     TIMER_A0->R = 0;                                 //reset timers
     TIMER_A2->R = 0;
+    P8->OUT ^= BIT6;
 
     trigger_flg = 1;
 
-    if(sample_n >= DMM_SAMPLE_N - 1) {
+    if(sample_n >= DMM_SAMPLE_N) {
         trigger_flg = 0;
         sample_n = 0;
         ta2_ov_cnt = 0;
@@ -173,12 +195,13 @@ void TA0_0_IRQHandler(void) {
     TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
 
-
     ta0_val += (TIMER_A0->CCR[0]);
     freq_ccr = ta0_val;
+
+
     ta0_val = 0;
 
-    P8->OUT ^= BIT6;
+
 
 }   //end TA0_0_IRQHandler()
 
@@ -193,9 +216,9 @@ void TA2_0_IRQHandler(void) {
     TIMER_A2->R = 0;                                 //reset timer
     TIMER_A2->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
-    if(ta2_ov_cnt == ta2_ov) {
+    if((ta2_ov_cnt >= ta2_ov) & trigger_flg) {
         ta2_ov_cnt = 0;
-
+        sample_n++;
         ADC14->CTL0 |= ADC14_CTL0_SC;   //start a conversion
     }
 

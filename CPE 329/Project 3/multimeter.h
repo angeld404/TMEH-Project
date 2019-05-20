@@ -19,6 +19,10 @@ void DMM_draw_info(char *freq, char *vpp, char *rms, char *dc, char *div);
 
 void DMM_graph(int *wave_amp);
 
+void DMM_RMS_graph(int vrms);
+
+void DMM_VDC_graph(int dc);
+
 int Get_DC(int *wave);
 
 int Get_Vpp(int*wave);

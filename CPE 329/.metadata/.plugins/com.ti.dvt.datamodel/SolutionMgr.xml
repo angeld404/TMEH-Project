@@ -5,7 +5,7 @@
    <string>defaultSolution</string>
    <void method="set">
     <object idref="SolutionManager$PersistState0"/>
-    <string>C:\Users\jonat\OneDrive\Documents\ccs\ccs_base\dvt_4.1.0.201902061603\CodeGen\solutions\CodeGenCoverage</string>
+    <string>D:\Documents\Github\Repositories\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558315927618\null</string>
    </void>
   </void>
  </object>
@@ -14,16 +14,10 @@
  <void id="ArrayList0" method="get">
   <object idref="SolutionManager$PersistState0"/>
   <void method="add">
-   <string>C:\Users\jonat\OneDrive\Documents\GitHub\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558309510115\null</string>
+   <string>D:\Apps\CCS\ccs\ccs_base\dvt_4.1.0.201902061603\CodeGen\solutions\CodeGenCoverage</string>
   </void>
   <void method="add">
-   <string>C:\Users\jonat\OneDrive\Documents\ccs\ccs_base\dvt_4.1.0.201902061603\CCSgraphs\solutions\SingleTime\singletime</string>
-  </void>
-  <void method="add">
-   <string>C:\Users\jonat\OneDrive\Documents\ccs\ccs_base\dvt_4.1.0.201902061603\CCSgraphs\solutions\SingleTime\singletime</string>
-  </void>
-  <void method="add">
-   <string>C:\Users\jonat\OneDrive\Documents\ccs\ccs_base\dvt_4.1.0.201902061603\CodeGen\solutions\CodeGenCoverage</string>
+   <string>D:\Documents\Github\Repositories\TMEH-Project\CPE 329\dvt\AnalysisSolutionsTemp\AnalysisSolution1558315927618\null</string>
   </void>
  </void>
 </void>
