@@ -22,6 +22,7 @@ int wave_table[120];
 uint32_t sample_n = 0;
 
 int per_flg = 0;
+int trigger_flg = 0;
 
 int freq_string[6];
 int wave_string[6];
@@ -144,41 +145,33 @@ void main(void) {
         DMM_graph(wave_table);
         DMM_draw_info(freq_chars, vpp_chars, rms_chars, dc_chars, graph_div_chars);
 
-        //one period has passed
-        if(per_flg) {
-            per_flg = 0;
-        }
-
-
-
-        //PRINT FREQUENCY
-        /*
-        Get_freq_string(freq, freq_string, freq_chars);
-        UART_tx_string("FREQUENCY: ");
-        UART_tx_string(freq_chars);
-        UART_tx_string(" Hz\r\n");
-        */
-
-
 	}
 
 }   //end main()
 
 void ADC14_IRQHandler(void) {
-    if(sample_n > (DMM_SAMPLE_N-1)) {
-        sample_n = 0;
-
+    if(trigger_flg) {
+        wave[sample_n] = ADC14->MEM[0] * 33000 / 16383;
+        wave_table[sample_n] = wave[sample_n] / 1000;
+        sample_n++;
+        if(sample_n == DMM_SAMPLE_N) trigger_flg = 0;
     }
-    wave[sample_n] = ADC14->MEM[0] * 33000 / 16383;
-    wave_table[sample_n] = wave[sample_n] / 1000;
-    sample_n++;
 }   //end ADC14_IRQHandler()
 
 void TA0_0_IRQHandler(void) {
-    TIMER_A0->R = 0;                                 //reset timer
+    TIMER_A0->R = 0;                                 //reset timers
+    TIMER_A2->R = 0;
+
+    trigger_flg = 1;
+
+    if(sample_n >= DMM_SAMPLE_N - 1) {
+        trigger_flg = 0;
+        sample_n = 0;
+        ta2_ov_cnt = 0;
+    }
+
     TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
-    per_flg++;
 
 
     ta0_val += (TIMER_A0->CCR[0]);

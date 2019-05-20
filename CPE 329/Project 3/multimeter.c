@@ -102,29 +102,46 @@ void DMM_draw_info(char *freq, char *vpp, char *rms, char *dc, char *div) {
     UART_tx_char(0x1b);         // set cursor home
     UART_tx_string("[H");
 
-    for (i = 0; i < 37; i++){   //move down 5 lines
+    for (i = 0; i < 35; i++){   //move down 5 lines
        UART_tx_char(0x1b);
-       UART_tx_string("[B");}
+       UART_tx_string("[B");
+    }
     UART_tx_string("Frequency: ");
-    UART_tx_string(freq);
+    UART_tx_char(freq[2]);
+    UART_tx_char('.');
+    for(i = 3; i < 6; i++) UART_tx_char(freq[i]);
+    UART_tx_string(" kHz");
 
-    for (i = 0; i < 15; i++){   //move right 20 lines
+    for (i = 0; i < 10; i++){   //move right 20 lines
        UART_tx_char(0x1b);
-       UART_tx_string("[C");}
+       UART_tx_string("[C");
+    }
     UART_tx_string("Vpp: ");
-    UART_tx_string(vpp);
+    UART_tx_char(vpp[1]);
+    UART_tx_char('.');
+    for(i = 2; i < 6; i++) UART_tx_char(freq[i]);
+    UART_tx_string(" Vpp");
 
-    for (i = 0; i < 15; i++){   //move right 20 lines
+
+    for (i = 0; i < 10; i++){   //move right 20 lines
         UART_tx_char(0x1b);
-        UART_tx_string("[C");}
+        UART_tx_string("[C");
+    }
     UART_tx_string("Vrms: ");
-    UART_tx_string(rms);
+    UART_tx_char(rms[1]);
+    UART_tx_char('.');
+    for(i = 2; i < 6; i++) UART_tx_char(rms[i]);
+    UART_tx_string(" Vrms");
 
-    for (i = 0; i < 15; i++){   //move right 20 lines
+    for (i = 0; i < 10; i++){   //move right 20 lines
         UART_tx_char(0x1b);
-        UART_tx_string("[C");}
+        UART_tx_string("[C");
+    }
     UART_tx_string("V Offset / VDC: ");
-    UART_tx_string(dc);
+    UART_tx_char(dc[1]);
+    UART_tx_char('.');
+    for(i = 2; i < 6; i++) UART_tx_char(dc[i]);
+    UART_tx_string(" Vdc");
 
     UART_tx_string("\r\n");
     UART_tx_string("us/Div: ");
