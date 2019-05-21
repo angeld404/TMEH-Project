@@ -86,6 +86,7 @@ char graph_div_chars[6];
 	P7->SEL0 |= BIT3;                               //configure capture input pin
 	P7->SEL1 &= ~BIT3;
 	P7->DIR &= ~BIT3;
+	P7->REN |= BIT3;
 	NVIC->ISER[0] |= 1 << (TA0_0_IRQn & 31);        //interrupt registers for timers
     NVIC->ISER[0] |= 1 << (TA0_N_IRQn & 31);
 
@@ -122,11 +123,13 @@ char graph_div_chars[6];
         freq = DMM_TA0_FREQ / (freq_ccr);
 
 	    //calculate and update sampling time
-        sample_ccr = freq_ccr / 240 + 1;
+        sample_ccr = freq_ccr / 240;
         ta2_ov = 0;
-        if(ta0_val >= 2996500) {
-            sample_ccr = 100000;
-            trigger_flg = 1;
+        if(ta0_val >= 306500) {
+            ta2_ov = 3;
+            ta2_ov_cnt = ta2_ov;
+            TIMER_A2->CCR[0] = 3395;
+            freq = 0;
         }
         while(sample_ccr > 0xFFFF) {
             sample_ccr -= 0xFFFF;
@@ -154,6 +157,7 @@ char graph_div_chars[6];
         DMM_draw_info(freq_chars, vpp_chars, rms_chars, dc_chars, graph_div_chars);
         DMM_RMS_graph(rms);
         DMM_VDC_graph(dc);
+        __delay_cycles(30);
 	}
 
 }   //end main()
@@ -190,9 +194,20 @@ void TA0_0_IRQHandler(void) {
 
 
     ta0_val += (TIMER_A0->CCR[0]);
+    if(ta0_val >= 306500) {
+        ta2_ov = 3;
+        ta2_ov_cnt = ta2_ov;
+        TIMER_A2->CCR[0] = 3395;
+        freq = 0;
+    }
     freq_ccr = ta0_val;
 
+    //get input wave frequency
+    freq = DMM_TA0_FREQ / (freq_ccr);
+
     ta0_val = 0;
+
+
 
 }   //end TA0_0_IRQHandler()
 
@@ -208,10 +223,11 @@ void TA2_0_IRQHandler(void) {
     TIMER_A2->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
     //calculate and update sampling time
-    if(ta0_val >= 2996500) {
+    if(ta0_val >= 306500) {
         ta2_ov = 3;
         ta2_ov_cnt = ta2_ov;
         TIMER_A2->CCR[0] = 3395;
+        freq = 0;
         //trigger_flg = 1;
     }
     if((ta2_ov_cnt >= ta2_ov) & trigger_flg) {
