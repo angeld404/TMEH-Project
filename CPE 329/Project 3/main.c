@@ -1,5 +1,17 @@
 /**
  * main.c
+ *
+ * CPE 329-11,12
+ * Spring 2019
+ *
+ * Project 3 - Digital Multimeter
+ * Jonathan Lau
+ * Professor Hummel
+ *
+ * On-board peripherals used:
+ *  ->ADC14: samples input waveform
+ *  ->Timer_A0: detect input wave period
+ *  ->Timer_A2: control sampling frequency/period
  */
 
 #include <string.h>
@@ -11,37 +23,35 @@
 #include "timer.h"
 #include "multimeter.h"
 
-uint32_t ta0_val = 0;
-uint32_t freq_ccr = 0;
-uint32_t sample_ccr = 0;
-uint32_t ta2_ov = 0;
-uint32_t ta2_ov_cnt = 0;
+uint32_t ta0_val = 0;           //counter of clk cycles passed in input signal period
+uint32_t freq_ccr = 0;          //number of clk cycles in input signal period
+uint32_t sample_ccr = 0;        //number of clk cycles in sampling period
+uint32_t ta2_ov = 0;            //count timer overflows in TIMER_A2
+uint32_t ta2_ov_cnt = 0;        //# of timer overflows in TIMER_A2
 
-int wave[120];
-int wave_table[120];
-uint32_t sample_n = 0;
+int wave[120];              //sampled input signal over 4 periods
+int wave_table[120];        //input signal to be printed on terminal
+uint32_t sample_n = 0;      //sampling index counter
 
-int vpp, rms, dc;
-int freq = 1000;
-int per_flg = 0;
-int trigger_flg = 0;
+int vpp, rms, dc;           //Vpp, Vrms, and Vdc of input signal
+int freq = 1000;            //input signal frequency
+int graph_div;              //graph horizontal axis resolution (us/div)
+int trigger_flg = 0;        //start-sampling flag
 
-int freq_string[6];
-int wave_string[6];
-int vpp_string[6];
-int rms_string[6];
-int dc_string[6];
-int graph_div_string[6];
+int freq_string[6];         //holds value of each digit of frequency
+int vpp_string[6];          //holds value of each digit of Vpp
+int rms_string[6];          //holds value of each digit of frequency Vrms
+int dc_string[6];           //holds value of each digit of frequency Vdc
+int graph_div_string[6];    //holds value of each digit of graph us/div value
 
-char freq_chars[6];
-char wave_chars[6];
-char vpp_chars[6];
-char rms_chars[6];
-char dc_chars[6];
-char graph_div_chars[6];
+char freq_chars[6];         //frequency value in string
+char vpp_chars[6];          //Vpp value in string
+char rms_chars[6];          //Vrms value in string
+char dc_chars[6];           //Vdc value in string
+char graph_div_chars[6];    //graph division value in string
 
 
-    void main(void) {
+void main(void) {
     // stop watchdog timer
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;
 
@@ -50,21 +60,6 @@ char graph_div_chars[6];
 	//SMCLK => HFXT, 24 MHz
 	//HSMCLK => HFXT, 24 MHz
 	set_HFXT();
-
-	//MCLK PORT
-	P4->SEL0 |= BIT3;
-	P4->SEL1 &= ~BIT3;
-	P4->DIR |= BIT3;
-
-	//SMCLK PORT
-	P7->SEL0 |= BIT0;
-	P7->SEL1 &= ~BIT0;
-	P7->DIR |= BIT0;
-
-	//HSMCLK PORT
-	P4->SEL0 |= BIT4;
-	P4->SEL1 &= ~BIT4;
-	P4->DIR |= BIT4;
 
 	//initialize UART
 	UART_init();
@@ -108,15 +103,11 @@ char graph_div_chars[6];
 	//enable interrupts
 	__enable_irq();
 
-
-	int graph_div;
-
 	//clear terminal screen
 	UART_tx_char(0x1b);
     UART_tx_string("[2J");
     UART_tx_char(0x1b);
     UART_tx_string("[H");
-
 
 	while(1) {
 	    //get input wave frequency
@@ -125,8 +116,8 @@ char graph_div_chars[6];
 	    //calculate and update sampling time
         sample_ccr = freq_ccr / 240;
         ta2_ov = 0;
-        if(ta0_val >= 306500) {
-            ta2_ov = 3;
+        if(ta0_val >= 306500) {         // Assume input is DC if edge is not detected
+            ta2_ov = 3;                 // within defined time
             ta2_ov_cnt = ta2_ov;
             TIMER_A2->CCR[0] = 3395;
             freq = 0;
@@ -163,13 +154,13 @@ char graph_div_chars[6];
 }   //end main()
 
 void ADC14_IRQHandler(void) {
-    ADC14->CLRIFGR0 |= ADC14_CLRIFGR0_CLRIFG0;
+    ADC14->CLRIFGR0 |= ADC14_CLRIFGR0_CLRIFG0;      //clear interrupt flag
 
-    if(trigger_flg) {
+    if(trigger_flg) {                       // only sample if triggered
         wave[sample_n] = ADC14->MEM[0] * 33000 / 16383;
         wave_table[sample_n] = wave[sample_n] / 1000;
         sample_n++;
-        if(sample_n >= DMM_SAMPLE_N){
+        if(sample_n >= DMM_SAMPLE_N){       //reset trigger flag
             trigger_flg = 0;
             sample_n = 0;
         }
@@ -177,12 +168,12 @@ void ADC14_IRQHandler(void) {
 
 }   //end ADC14_IRQHandler()
 
-void TA0_0_IRQHandler(void) {
-    TIMER_A0->R = 0;                                 //reset timers
+void TA0_0_IRQHandler(void) {           //handle edge detection
+    TIMER_A0->R = 0;        //reset timers
     TIMER_A2->R = 0;
     P8->OUT ^= BIT6;
 
-    trigger_flg = 1;
+    trigger_flg = 1;        //set trigger flag
 
     if(sample_n >= DMM_SAMPLE_N) {
         trigger_flg = 0;
@@ -191,7 +182,6 @@ void TA0_0_IRQHandler(void) {
     }
 
     TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
-
 
     ta0_val += (TIMER_A0->CCR[0]);
     if(ta0_val >= 306500) {
@@ -218,21 +208,21 @@ void TA0_N_IRQHandler(void) {
 
 }   //end TA0_N_IRQHandler()
 
-void TA2_0_IRQHandler(void) {
+void TA2_0_IRQHandler(void) {           //handle sample timing
     TIMER_A2->R = 0;                                 //reset timer
     TIMER_A2->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
 
     //calculate and update sampling time
-    if(ta0_val >= 306500) {
-        ta2_ov = 3;
+    if(ta0_val >= 306500) {     // Assume input is DC if edge is not detected
+        ta2_ov = 3;             // within defined time
         ta2_ov_cnt = ta2_ov;
         TIMER_A2->CCR[0] = 3395;
         freq = 0;
         //trigger_flg = 1;
     }
+
     if((ta2_ov_cnt >= ta2_ov) & trigger_flg) {
         ta2_ov_cnt = 0;
-
         ADC14->CTL0 |= ADC14_CTL0_SC;   //start a conversion
     }
 

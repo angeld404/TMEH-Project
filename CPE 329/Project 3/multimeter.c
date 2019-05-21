@@ -68,7 +68,7 @@ int Get_RMS(int *wave) {
     rms = sqrt(sum/120) * 100;
 
     return rms;
-}   //end Get_rms
+}   //end Get_rms()
 
 void DMM_draw_xaxis() {
     int i;
@@ -247,8 +247,7 @@ void DMM_draw_xaxis() {
     UART_tx_char(0x1b);
     UART_tx_string("[H");
 
-
-}
+}   //end DMM_draw_xaxis()
 
 void DMM_draw_info(char *freq, char *vpp, char *rms, char *dc, char *div) {
     int i;
@@ -256,17 +255,14 @@ void DMM_draw_info(char *freq, char *vpp, char *rms, char *dc, char *div) {
     UART_tx_char(0x1b);         // set cursor home
     UART_tx_string("[H");
 
-
-   UART_tx_char(0x1b);      //move down 5 lines
-   UART_tx_string("[35B");
-
+    UART_tx_char(0x1b);      //move down 5 lines
+    UART_tx_string("[35B");
 
     UART_tx_string("Frequency: ");
     UART_tx_char(freq[2]);
     UART_tx_char('.');
     for(i = 3; i < 6; i++) UART_tx_char(freq[i]);
     UART_tx_string(" kHz");
-
     for (i = 0; i < 10; i++){   //move right 20 lines
        UART_tx_char(0x1b);
        UART_tx_string("[C");
@@ -276,7 +272,6 @@ void DMM_draw_info(char *freq, char *vpp, char *rms, char *dc, char *div) {
     UART_tx_char('.');
     for(i = 2; i < 6; i++) UART_tx_char(vpp[i]);
     UART_tx_string(" Vpp");
-
 
     //move right 20 lines
     UART_tx_char(0x1b);
@@ -302,7 +297,7 @@ void DMM_draw_info(char *freq, char *vpp, char *rms, char *dc, char *div) {
     UART_tx_string("us/Div: ");
     UART_tx_string(div);
 
-}
+}   //end DMM_draw_info
 
 void DMM_RMS_graph(int vrms){
     int graph[34][20];
@@ -320,14 +315,11 @@ void DMM_RMS_graph(int vrms){
             graph[i][j] = ' ';
         }
     }
-
-
     for (i = vrms; i >= 0 ;i--){
         for (j = 19; j>= 0; j--){
             graph[i][j] = '-';
         }
     }
-
     for (i = 33; i >= 0; i--){
        for (j = 19; j >= 0; j--){
            UART_tx_char(graph[i][j]);
@@ -335,11 +327,9 @@ void DMM_RMS_graph(int vrms){
        UART_tx_string("\r\n");
        UART_tx_char(0x1b);
        UART_tx_string("[130C");
-
     }
 
-
-}
+}   //end DMM_RMS_graph()
 
 
 void DMM_VDC_graph(int dc){
@@ -358,14 +348,11 @@ void DMM_VDC_graph(int dc){
             graph[i][j] = ' ';
         }
     }
-
-
     for (i = dc; i >= 0 ;i--){
         for (j = 19; j>= 0; j--){
             graph[i][j] = '-';
         }
     }
-
     for (i = 33; i >= 0; i--){
        for (j = 19; j >= 0; j--){
            UART_tx_char(graph[i][j]);
@@ -373,11 +360,9 @@ void DMM_VDC_graph(int dc){
        UART_tx_string("\r\n");
        UART_tx_char(0x1b);
        UART_tx_string("[155C");
-
     }
 
-
-}
+}   //end DMM_VDC_graph()
 
 
 void DMM_graph(int *wave_amp){
