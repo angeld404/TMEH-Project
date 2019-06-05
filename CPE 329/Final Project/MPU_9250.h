@@ -8,12 +8,14 @@
 #ifndef MPU_9250_H_
 #define MPU_9250_H_
 
-#define ACCEL_X 0x3B3C
-#define ACCEL_Y 0x3D3E
-#define ACCEL_Z 0x3F40
+#define ACCEL_X 0x3B
+#define ACCEL_Y 0x3D
+#define ACCEL_Z 0x3F
+#define IMU_SLAVE_ADDR  0x68
 
 
-int IMU_TX_RX(int addr);
+//read from peripheral
+int IMU_I2C_read(int reg_addr);
 
 
 

@@ -5,6 +5,7 @@
 
 #include "msp.h"
 #include "i2c.h"
+#include "MPU_9250.h"
 
 void I2C_init() {
     P1->SEL0 |= BIT6 | BIT7; // Set I2C pins of eUSCI_B0
