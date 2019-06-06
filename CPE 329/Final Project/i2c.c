@@ -38,6 +38,8 @@ void I2C_write(int per_addr, int data) {
     EUSCI_B0 -> CTLW0 |= EUSCI_B_CTLW0_TXSTP;       // I2C stop condition
 }   //end I2C_write()
 
+/*
+
 int I2C_read_IMU(int reg_addr) {
     int hi_data, lo_data, data;
 
@@ -68,4 +70,4 @@ int I2C_read_IMU(int reg_addr) {
     return data;
 }   //end I2C_read_IMU()
 
-
+*/

@@ -17,6 +17,9 @@
 //read from peripheral
 int IMU_I2C_read(int reg_addr);
 
+//get ccr value from IMU data
+int IMU_get_PWM(int old_grav, int new_grav, int Kp, int Ki, int Kd, int dt);
+
 
 
 

@@ -30,19 +30,20 @@ void Timer_A_init(int clk, int mc, int IE, int outmod){
 
     TIMER_A0->CTL |= (clk | mc);
     TIMER_A0->CCTL[0] |= (IE | outmod);
+    TIMER_A0->CCTL[1] |= (IE | outmod);
 
 
 
 }
 
-void TA0_0_IRQHandler(void) {
 
-    TIMER_A0->CCTL[0] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
-
-}   //end TA0_0_IRQHandler()
 
 void TA0_N_IRQHandler(void) {
-    // not used here
+
+
+    TIMER_A0->CCTL[1] &= (~TIMER_A_CCTLN_CCIFG);     //clear interrupt flag
+
+    P7->OUT ^= BIT3;
 }   //end TA0_N_IRQHandler()
 
 
