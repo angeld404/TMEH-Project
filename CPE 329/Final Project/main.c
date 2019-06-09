@@ -1,11 +1,11 @@
 #include "msp.h"
 #include "delay_us.h"
 #include "set_dco.h"
-#include "spi.h"
 #include "timer.h"
 #include "MPU_9250.h"
 #include <stdio.h>
 #include "i2c.h"
+#include <math.h>
 
 
 
@@ -13,14 +13,13 @@
  * main.c
  */
 
-uint16_t IMU_data;
+
 uint16_t ccr;
 
 //IMU Variables
-uint16_t accel_x; // gyro_x, accel_y, accel_z;
-uint16_t old_grav;
-uint16_t angle_x;
-uint16_t grav_x;
+signed int accel_x, accel_z, gyro_y;
+float old_angle, angle_acc, angle_gyr, angle;
+float angle_x;
 
 //PID Parameters
 uint16_t Kp = 1;
@@ -57,16 +56,7 @@ void main(void)
 
     while (1){
 
-        if(accel_x >= 0x8000){
-            P9->OUT |= BIT0 | BIT2;
-            P9->OUT &= ~(BIT1 | BIT3);
-        }
-        else{
-            P9->OUT &= ~(BIT0 | BIT2);
-            P9->OUT |= BIT1 | BIT3;
-        }
 
-        printf("%d x 10^-3 gx\r", grav_x);
 
 
     }
@@ -90,15 +80,20 @@ void TA0_0_IRQHandler(void) {
 
     P7->OUT ^= BIT3;
 
-    old_grav = grav_x;
+    old_angle = angle;
     accel_x = IMU_I2C_read(ACCEL_X);
-    if(accel_x >= 0x8000) {
-        printf("-");
-        accel_x ^= 0xFFFF;
-        accel_x += 1;
-    }
-    grav_x = ((2*accel_x*1000) / 32767);
-    ccr = IMU_get_PWM(old_grav, grav_x, Kp, Ki, Kd, dt);
+    accel_z = IMU_I2C_read(ACCEL_Z);
+    gyro_y = IMU_I2C_read(GYRO_Y);
+
+    angle_acc = (float) (atan2(accel_x,accel_z)+M_PI)*RAD_TO_DEG;
+    angle_gyr += (float) gyro_y * dt * .0076294;
+    angle = .98*(angle+gyro_y*dt) + (.02)*angle_acc;
+
+    printf("%f\r", angle);
+
+
+    //grav_x = ((2*accel_x*1000) / 32767);
+    ccr = IMU_get_PWM(old_angle, angle, Kp, Ki, Kd, dt);
     TIMER_A0->CCR[1] = ccr;
 
 }   //end TA0_0_IRQHandler()

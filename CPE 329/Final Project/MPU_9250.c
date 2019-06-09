@@ -44,16 +44,16 @@ int IMU_I2C_read(int reg_addr) {
     return data;
 }   //end I2C_read_IMU()
 
-int IMU_get_PWM(int old_grav, int new_grav, int Kp, int Ki, int Kd, int dt){
+int IMU_get_PWM(int old_angle, int new_angle, int Kp, int Ki, int Kd, int dt){
     int prop, intg, der, ccr;
 
-    prop = new_grav * Kp;
+    prop = new_angle * Kp;
 
-    intg = (new_grav - old_grav) * dt * Ki;
+    intg = (new_angle - old_angle) * dt * Ki;
 
-    der = (new_grav - old_grav) / dt * Kd;
+    der = ((new_angle - old_angle) / dt) * Kd;
 
-    ccr = ((prop + intg + der)*60000)/30000;
+    ccr = ((prop + intg + der)*60000)/180;
 
     return ccr;
 

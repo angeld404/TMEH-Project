@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Documents\Github\Repositories\TMEH-Project\CPE 329\Final Project"/>
 		<item value="C:\Users\angel\Downloads\MSP432-IMU9250-master\MSP432-IMU9250-master\MSP432_IMU\UART"/>
 		<item value="C:\Users\angel\Downloads\MSP432-IMU9250-master\MSP432-IMU9250-master"/>
 		<item value="C:\Users\angel\Downloads\MSP432-IMU9250-master\MSP432-IMU9250-master\MSP432_IMU\IMU"/>

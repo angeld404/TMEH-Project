@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ADC14_CLR" key="selection"/>
+		<item value="old_angle" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="old_grav"/>
+			<item value="old_accel"/>
 			<item value="ADC14_CLR"/>
 			<item value="ADC14_"/>
 			<item value="ACD14"/>
@@ -21,10 +23,9 @@
 			<item value="TIMER_A_CCTL"/>
 			<item value="TIMER_A_CCTL0"/>
 			<item value="TIMER_A_CCTL0_"/>
-			<item value="adc14_irqn"/>
-			<item value="divhs"/>
 		</list>
 		<list key="replacehistory">
+			<item value="old_angle"/>
 			<item value="WAVE_RES"/>
 			<item value="freq"/>
 			<item value="P4"/>
